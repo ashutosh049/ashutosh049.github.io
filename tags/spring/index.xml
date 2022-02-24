@@ -8,18 +8,6 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 31 Aug 2020 13:09:42 -0600</lastBuildDate><atom:link href="https://ashutosh049.github.io/tags/spring/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Binary Tree: Lowest Common Ancestor (LCA)</title>
-      <link>https://ashutosh049.github.io/post/binary-tree-lowest-common-ancestor-lca/binary-tree-lowest-common-ancestor-lca/</link>
-      <pubDate>Mon, 31 Aug 2020 13:09:42 -0600</pubDate>
-      
-      <guid>https://ashutosh049.github.io/post/binary-tree-lowest-common-ancestor-lca/binary-tree-lowest-common-ancestor-lca/</guid>
-      <description>Module: Binary Tree
-You can refer to the Leetcode problem 236. Lowest Common Ancestor of a Binary Tree
- Problem Statement Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
- According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).</description>
-    </item>
-    
-    <item>
       <title>Demystifying Spring Task Executor</title>
       <link>https://ashutosh049.github.io/post/demystifying_spring_task_executor/</link>
       <pubDate>Mon, 31 Aug 2020 13:09:42 -0600</pubDate>
