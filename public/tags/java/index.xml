@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on Microlean</title>
+    <link>https://ashutosh049.github.io/tags/java/</link>
+    <description>Recent content in Java on Microlean</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 04 Jun 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://ashutosh049.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Demystifying Spring Task Executor</title>
+      <link>https://ashutosh049.github.io/post/demystifying_spring_task_executor/</link>
+      <pubDate>Mon, 04 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ashutosh049.github.io/post/demystifying_spring_task_executor/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
