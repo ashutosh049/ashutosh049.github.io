@@ -28,15 +28,15 @@
     
 
     
-    <meta name="title" content="Topics in Software Engineering" />
-    <meta property="og:title" content="Topics in Software Engineering" />
-    <meta property="twitter:title" content="Topics in Software Engineering" />
+    <meta name="title" content="Demystifying Spring Task Executor" />
+    <meta property="og:title" content="Demystifying Spring Task Executor" />
+    <meta property="twitter:title" content="Demystifying Spring Task Executor" />
     
 
     
-    <meta name="description" content="Thoughts on software engineering, cloud architectures, Microservices, Design Patterns, Data Structure and Algorithm">
-    <meta property="og:description" content="Thoughts on software engineering, cloud architectures, Microservices, Design Patterns, Data Structure and Algorithm" />
-    <meta property="twitter:description" content="Thoughts on software engineering, cloud architectures, Microservices, Design Patterns, Data Structure and Algorithm" />
+    <meta name="description" content="A blog about what and how to configure Spring Task executor core pool size, max pool size and queue capacity">
+    <meta property="og:description" content="A blog about what and how to configure Spring Task executor core pool size, max pool size and queue capacity" />
+    <meta property="twitter:description" content="A blog about what and how to configure Spring Task executor core pool size, max pool size and queue capacity" />
     
 
     
@@ -47,9 +47,9 @@
     <meta name="keyword"  content="Kumar, Ashutosh, java, spring, microservice, cloud, dsa, data structure, algorithm">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Posts-Kumar Ashutosh Topics in Software Engineering</title>
+    <title>Demystifying Spring Task Executor-Kumar Ashutosh Topics in Software Engineering</title>
 
-    <link rel="canonical" href="/post/">
+    <link rel="canonical" href="/post/demystifying_spring_task_executor/demystifying_spring_task_executor/">
 
     <link rel="stylesheet" href="/css/iDisqus.min.css"/>
 	
@@ -161,14 +161,42 @@
 
 
 
-<header class="intro-header" style="background-image: url('/images/banners/main_background.jpg')">
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/images/github-pagesLightBlue.jpeg')
+    }
+</style>
+<header class="intro-header">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>Topics in Software Engineering </h1>
-                    
-		    <span class="subheading">How to do it and why does it work?</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/spring" title="Spring">
+                            Spring
+                        </a>
+                        
+                        <a class="tag" href="/tags/threads" title="Threads">
+                            Threads
+                        </a>
+                        
+                        <a class="tag" href="/tags/java" title="Java">
+                            Java
+                        </a>
+                        
+                    </div>
+                    <h1>Demystifying Spring Task Executor</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                        Posted on
+                        Monday, August 31, 2020
+                        
+                        
+                        
+                    </span>
                 </div>
             </div>
         </div>
@@ -181,13 +209,82 @@
 <article>
     <div class="container">
         <div class="row">
+
             
             <div class="
-                col-lg-8 col-lg-offset-2
+                col-lg-11 col-lg-offset-1
                 col-md-10 col-md-offset-1
                 post-container">
 
-         	
+                
+                <header>
+                    <h2>Contents</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                
+                <p><code>corePoolSize</code> vs. <code>maxPoolSize</code> vs. <code>queueCapacity</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">  <span style="color:#a6e22e">@Bean</span>
+  <span style="color:#a6e22e">@Primary</span>
+  <span style="color:#66d9ef">public</span> TaskExecutor <span style="color:#a6e22e">taskExecutor</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    ThreadPoolTaskExecutor executor <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ThreadPoolTaskExecutor<span style="color:#f92672">();</span>
+    executor<span style="color:#f92672">.</span><span style="color:#a6e22e">setCorePoolSize</span><span style="color:#f92672">(</span>3<span style="color:#f92672">);</span>
+    executor<span style="color:#f92672">.</span><span style="color:#a6e22e">setMaxPoolSize</span><span style="color:#f92672">(</span>6<span style="color:#f92672">);</span>
+    executor<span style="color:#f92672">.</span><span style="color:#a6e22e">setQueueCapacity</span><span style="color:#f92672">(</span>4<span style="color:#f92672">);</span>
+    executor<span style="color:#f92672">.</span><span style="color:#a6e22e">setWaitForTasksToCompleteOnShutdown</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+    executor<span style="color:#f92672">.</span><span style="color:#a6e22e">setThreadNamePrefix</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;my-async&#34;</span><span style="color:#f92672">);</span>
+    executor<span style="color:#f92672">.</span><span style="color:#a6e22e">initialize</span><span style="color:#f92672">();</span>
+    <span style="color:#66d9ef">return</span> executor<span style="color:#f92672">;</span>
+  <span style="color:#f92672">}</span>
+</code></pre></div><h4 id="core-pool-size">Core pool size</h4>
+<p>In a nut shell, <code>Core pool size</code> is the happy path.
+When a new task is submitted and fewer than Core Pool Size threads are running, a new thread is created to handle the request, even if other threads are idle. If there are greater than Core Pool Size but fewer than Max Pool Size threads running, a new thread is created only if no threads are idle.</p>
+<h4 id="max-pool-size">Max pool size</h4>
+<p>It defines the upper limit of threads that can ever be created! Once limit is reached(no thread is available), no more tasks are accepted.</p>
+<h4 id="queue-capacity">Queue capacity</h4>
+<p>Defines the number of tasks to queue when all core pool are filled. Threads will be scalable to maximum pool size when queue is full.</p>
+<h4 id="explain-to-me-like-im-5-years-old">Explain to me like I&rsquo;m 5 years old</h4>
+<p>A simple and efficient way to get this is by considering yourself being in a bank.</p>
+<p>You ever stood in a line even though there is a window available?
+Why would the bank keep a customer in a queue if there are available cash-window? That&rsquo;s exactly the case with <code>core pool size</code>. If there are un-used threads, new tasks are directly allocated to them.</p>
+<p><a href="https://i.stack.imgur.com/SnOAz.jpg">
+  <img src="https://i.stack.imgur.com/SnOAz.jpg" alt="enter image description here">
+
+</a></p>
+<p>One the available window(core pool size) is full, customers are asked to wait in the queue. This is where the <code>queue-capacity</code> comes in picture! New tasks are keep on queueing until no more tasks can be queued.</p>
+<p><a href="https://i.stack.imgur.com/hyael.jpg">
+  <img src="https://i.stack.imgur.com/hyael.jpg" alt="enter image description here">
+
+</a></p>
+<p>What if the wait-lounge is full of customers? Bank can allocate/open new cash-windows as they see spike in number of customers(tasks). They had 3 more in reserve.
+Here comes the <code>max pool size</code> in context.</p>
+<p>Once these windows(threads) are all occupied, Bank can no longer server any new customers(tasks). Agree? And henceforth, new tasks are not accepted!</p>
+<p><a href="https://i.stack.imgur.com/UfvHK.jpg">
+  <img src="https://i.stack.imgur.com/UfvHK.jpg" alt="enter image description here">
+
+</a></p>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/post/binary-tree-maximum-depthheight-of-deepest-node-using-recursive-and-iterative-way-hpp/binary-tree-maximum-depthheight-of-deepest-node-using-recursive-and-iterative-way-hpp/" data-toggle="tooltip" data-placement="top" title="Binary Tree: Maximum Depth/Height Of Deepest Node using recursive and iterative way">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
                 
 <div id="disqus-comment"></div>
 
@@ -207,7 +304,7 @@
             </div>
             
             <div class="
-                col-lg-8 col-lg-offset-2
+                col-lg-11 col-lg-offset-1
                 col-md-10 col-md-offset-1
                 sidebar-container">
 
@@ -221,25 +318,25 @@
                         
                         
                         <a href="/tags/binary-tree" title="binary-tree">
-                        binary-tree
+                            binary-tree
                         </a>
                         
                         
                         
                         <a href="/tags/dsa" title="dsa">
-                        dsa
+                            dsa
                         </a>
                         
                         
                         
                         <a href="/tags/java" title="java">
-                        java
+                            java
                         </a>
                         
                         
                         
                         <a href="/tags/leetcode" title="leetcode">
-                        leetcode
+                            leetcode
                         </a>
                         
                         
@@ -249,7 +346,7 @@
                         
                         
                         <a href="/tags/tree-travesal" title="tree-travesal">
-                        tree-travesal
+                            tree-travesal
                         </a>
                         
                         
@@ -274,7 +371,7 @@
                 <ul class="list-inline text-center">
                    
                    <li>
-                       <a href='/post/index.xml' rel="alternate" type="application/rss+xml" title="Microlean" >
+                       <a href='' rel="alternate" type="application/rss+xml" title="Microlean" >
                            <span class="fa-stack fa-lg">
                                <i class="fa fa-circle fa-stack-2x"></i>
                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
