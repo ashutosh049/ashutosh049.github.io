@@ -28,15 +28,15 @@
     
 
     
-    <meta name="title" content="Demystifying Spring Task Executor" />
-    <meta property="og:title" content="Demystifying Spring Task Executor" />
-    <meta property="twitter:title" content="Demystifying Spring Task Executor" />
+    <meta name="title" content="Binary Tree: Lowest Common Ancestor (LCA)" />
+    <meta property="og:title" content="Binary Tree: Lowest Common Ancestor (LCA)" />
+    <meta property="twitter:title" content="Binary Tree: Lowest Common Ancestor (LCA)" />
     
 
     
-    <meta name="description" content="A blog about what and how to configure Spring Task executor core pool size, max pool size and queue capacity">
-    <meta property="og:description" content="A blog about what and how to configure Spring Task executor core pool size, max pool size and queue capacity" />
-    <meta property="twitter:description" content="A blog about what and how to configure Spring Task executor core pool size, max pool size and queue capacity" />
+    <meta name="description" content="Solving Binary Tree: Lowest Common Ancestor">
+    <meta property="og:description" content="Solving Binary Tree: Lowest Common Ancestor" />
+    <meta property="twitter:description" content="Solving Binary Tree: Lowest Common Ancestor" />
     
 
     
@@ -47,9 +47,9 @@
     <meta name="keyword"  content="Kumar, Ashutosh, java, spring, microservice, cloud, dsa, data structure, algorithm">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Demystifying Spring Task Executor-Kumar Ashutosh Topics in Software Engineering</title>
+    <title>Binary Tree: Lowest Common Ancestor (LCA)-Kumar Ashutosh Topics in Software Engineering</title>
 
-    <link rel="canonical" href="/post/demystifying_spring_task_executor/">
+    <link rel="canonical" href="/post/binary-tree-lowest-common-ancestor-lca/binary-tree-lowest-common-ancestor-lca/">
 
     <link rel="stylesheet" href="/css/iDisqus.min.css"/>
 	
@@ -183,7 +183,7 @@
                         </a>
                         
                     </div>
-                    <h1>Demystifying Spring Task Executor</h1>
+                    <h1>Binary Tree: Lowest Common Ancestor (LCA)</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         
@@ -226,46 +226,129 @@
   </ul>
 </nav>
                 
-                <p><code>corePoolSize</code> vs. <code>maxPoolSize</code> vs. <code>queueCapacity</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">  <span style="color:#a6e22e">@Bean</span>
-  <span style="color:#a6e22e">@Primary</span>
-  <span style="color:#66d9ef">public</span> TaskExecutor <span style="color:#a6e22e">taskExecutor</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-    ThreadPoolTaskExecutor executor <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ThreadPoolTaskExecutor<span style="color:#f92672">();</span>
-    executor<span style="color:#f92672">.</span><span style="color:#a6e22e">setCorePoolSize</span><span style="color:#f92672">(</span>3<span style="color:#f92672">);</span>
-    executor<span style="color:#f92672">.</span><span style="color:#a6e22e">setMaxPoolSize</span><span style="color:#f92672">(</span>6<span style="color:#f92672">);</span>
-    executor<span style="color:#f92672">.</span><span style="color:#a6e22e">setQueueCapacity</span><span style="color:#f92672">(</span>4<span style="color:#f92672">);</span>
-    executor<span style="color:#f92672">.</span><span style="color:#a6e22e">setWaitForTasksToCompleteOnShutdown</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
-    executor<span style="color:#f92672">.</span><span style="color:#a6e22e">setThreadNamePrefix</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;my-async&#34;</span><span style="color:#f92672">);</span>
-    executor<span style="color:#f92672">.</span><span style="color:#a6e22e">initialize</span><span style="color:#f92672">();</span>
-    <span style="color:#66d9ef">return</span> executor<span style="color:#f92672">;</span>
-  <span style="color:#f92672">}</span>
-</code></pre></div><h4 id="core-pool-size">Core pool size</h4>
-<p>In a nut shell, <code>Core pool size</code> is the happy path.
-When a new task is submitted and fewer than Core Pool Size threads are running, a new thread is created to handle the request, even if other threads are idle. If there are greater than Core Pool Size but fewer than Max Pool Size threads running, a new thread is created only if no threads are idle.</p>
-<h4 id="max-pool-size">Max pool size</h4>
-<p>It defines the upper limit of threads that can ever be created! Once limit is reached(no thread is available), no more tasks are accepted.</p>
-<h4 id="queue-capacity">Queue capacity</h4>
-<p>Defines the number of tasks to queue when all core pool are filled. Threads will be scalable to maximum pool size when queue is full.</p>
-<h4 id="explain-to-me-like-im-5-years-old">Explain to me like I&rsquo;m 5 years old</h4>
-<p>A simple and efficient way to get this is by considering yourself being in a bank.</p>
-<p>You ever stood in a line even though there is a window available?
-Why would the bank keep a customer in a queue if there are available cash-window? That&rsquo;s exactly the case with <code>core pool size</code>. If there are un-used threads, new tasks are directly allocated to them.</p>
-<p><a href="https://i.stack.imgur.com/SnOAz.jpg">
-  <img src="https://i.stack.imgur.com/SnOAz.jpg" alt="enter image description here">
+                <p><u><a href="https://dev.to/ashutosh049/series/16012">Module: Binary Tree</a></u></p>
+<p>You can refer to the Leetcode problem <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/">236. Lowest Common Ancestor of a Binary Tree</a></p>
+<hr>
+<h4 id="problem-statement">Problem Statement</h4>
+<p>Given a binary tree, find the <code>lowest common ancestor</code> (LCA) of two given nodes in the tree.</p>
+<blockquote>
+<p>According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).”</p>
+</blockquote>
+<hr>
+<h4 id="example-1">Example 1:</h4>
+<img src="https://assets.leetcode.com/uploads/2018/12/14/binarytree.png">
+<p>Input: <code>root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1</code>
+Output: <code>3</code>
+Explanation: The LCA of nodes 5 and 1 is 3.</p>
+<h4 id="example-2">Example 2:</h4>
+<img src="https://assets.leetcode.com/uploads/2018/12/14/binarytree.png">
+<p>Input: <code>root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 4</code>
+Output: <code>5</code>
+Explanation: The LCA of nodes 5 and 4 is 5, since a node can be a descendant of itself according to the LCA definition.</p>
+<hr>
+<h4 id="intuition">Intuition</h4>
+<p>We need to find the common first parent which has both <code>p</code> and <code>q</code> as descendants.</p>
+<p>Consider the following Binary Tree:</p>
+<p>Input: root: <code>[1, 2, 3, 4, null, 5, 6, null, 7, null, 8, 9, 10, null, null, null, null,null, null, 11, 12]</code>
+p: <code>8</code>
+q : <code>11</code></p>
+<p>
+  <img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/75m60k49jyaqo1436722.png" alt="Image 1">
 
-</a></p>
-<p>One the available window(core pool size) is full, customers are asked to wait in the queue. This is where the <code>queue-capacity</code> comes in picture! New tasks are keep on queueing until no more tasks can be queued.</p>
-<p><a href="https://i.stack.imgur.com/hyael.jpg">
-  <img src="https://i.stack.imgur.com/hyael.jpg" alt="enter image description here">
+</p>
+<ul>
+<li>We can follow the recursive <code>pre-order dfs traversal</code> and go on comparing the current node with p and q.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>root <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">){</span>
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><ul>
+<li>For each/any given node(root), check:
+<ol>
+<li>If <code>root</code> is <code>null</code>, then we return <code>null</code>.</li>
+<li>If the one of the nodes among <code>p</code> and <code>q</code> is <code>root</code> itself? It means we found a match and in that case, we need to return that node, the matched root.</li>
+</ol>
+</li>
+</ul>
+<p>So for this we can compare the the <code>root</code> with both p and q.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>root <span style="color:#f92672">==</span> p <span style="color:#f92672">||</span> root <span style="color:#f92672">==</span> q<span style="color:#f92672">){</span>
+  <span style="color:#66d9ef">return</span> root<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><ul>
+<li>
+<p>If any of the target nodes p/q does not exist in left child, it will be null. And similarly for right child, it will be null.</p>
+</li>
+<li>
+<p>Once a match is found in either left or right subtree, it is returned back(upward) to the recursive call and then compared with counter part (left or right value). If both the values are found, let say <code>p</code> is found in left subtree and <code>q</code> found in the right subtree, then the current root, parent of left and right is returned as lca.</p>
+</li>
+<li>
+<p>If none found, null will be returned.</p>
+</li>
+</ul>
+<p>
+  <img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5s035z2ouvi7f21j9z9k.png" alt="Image 2">
 
-</a></p>
-<p>What if the wait-lounge is full of customers? Bank can allocate/open new cash-windows as they see spike in number of customers(tasks). They had 3 more in reserve.
-Here comes the <code>max pool size</code> in context.</p>
-<p>Once these windows(threads) are all occupied, Bank can no longer server any new customers(tasks). Agree? And henceforth, new tasks are not accepted!</p>
-<p><a href="https://i.stack.imgur.com/UfvHK.jpg">
-  <img src="https://i.stack.imgur.com/UfvHK.jpg" alt="enter image description here">
-
-</a></p>
+</p>
+<ul>
+<li>
+<p>Follow the blue arrows, when <code>8</code> is found(from <code>lca(root.right, 8, 11)</code> of root node <code>5</code>), it is compared with left child <code>null</code> and <code>8</code> is returned from the call stack of root <code>5</code>.</p>
+</li>
+<li>
+<p>Similarly, node <code>11</code> gets returned as a result of recursive call from root <code>3</code>.</p>
+</li>
+<li>
+<p>Finally, in the call stack of root node <code>3</code>, left node is <code>8</code> and right node is <code>11</code>. These 2 values are compared and since both are present(not null), current root (<code>3</code>) is returned which returned back till Tree root <code>1</code>.</p>
+</li>
+</ul>
+<hr>
+<h4 id="complexity-analysis">Complexity Analysis</h4>
+<p><code>Time complexity</code>: <code>O(N)</code>, where <code>N</code> is the number of nodes in the binary tree. In the worst case(left skewed or right skewed) we might be visiting all the nodes of the binary tree.</p>
+<p><code>Space complexity</code>: <code>O(N)</code>. This is because the maximum amount of space utilized by the recursion stack would be <code>N</code> since the height of a skewed binary tree could be <code>N</code>.</p>
+<hr>
+<h4 id="program">program</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> TreeNode <span style="color:#a6e22e">lowestCommonAncestor</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">,</span> TreeNode p<span style="color:#f92672">,</span> TreeNode q<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>root <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span> root <span style="color:#f92672">==</span> p <span style="color:#f92672">||</span> root <span style="color:#f92672">==</span> q<span style="color:#f92672">){</span>
+            <span style="color:#66d9ef">return</span> root<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        
+        TreeNode lNode <span style="color:#f92672">=</span> lowestCommonAncestor<span style="color:#f92672">(</span>root<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span><span style="color:#f92672">,</span> p<span style="color:#f92672">,</span> q<span style="color:#f92672">);</span>
+        TreeNode rNode <span style="color:#f92672">=</span> lowestCommonAncestor<span style="color:#f92672">(</span>root<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span><span style="color:#f92672">,</span> p<span style="color:#f92672">,</span> q<span style="color:#f92672">);</span>
+        
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>lNode <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+            <span style="color:#66d9ef">return</span> rNode<span style="color:#f92672">;</span>
+        
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>rNode <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+            <span style="color:#66d9ef">return</span> lNode<span style="color:#f92672">;</span>
+        
+        <span style="color:#66d9ef">return</span> root<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h4 id="test-cases">Test cases</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">[</span>3<span style="color:#f92672">,</span>5<span style="color:#f92672">,</span>1<span style="color:#f92672">,</span>6<span style="color:#f92672">,</span>2<span style="color:#f92672">,</span>0<span style="color:#f92672">,</span>8<span style="color:#f92672">,</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span>7<span style="color:#f92672">,</span>4<span style="color:#f92672">]</span>
+5
+1
+<span style="color:#f92672">[</span>3<span style="color:#f92672">,</span>5<span style="color:#f92672">,</span>1<span style="color:#f92672">,</span>6<span style="color:#f92672">,</span>2<span style="color:#f92672">,</span>0<span style="color:#f92672">,</span>8<span style="color:#f92672">,</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span>7<span style="color:#f92672">,</span>4<span style="color:#f92672">]</span>
+5
+4
+<span style="color:#f92672">[</span>1<span style="color:#f92672">,</span>2<span style="color:#f92672">]</span>
+1
+2
+</code></pre></div><hr>
+<h4 id="related-problems">Related problems</h4>
+<ul>
+<li><a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree-ii/">Lowest Common Ancestor of a Binary Tree II</a></li>
+<li><a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree-iii/">Lowest Common Ancestor of a Binary Tree III</a></li>
+<li><a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree-iv/">Lowest Common Ancestor of a Binary Tree IV</a></li>
+</ul>
+<hr>
+<p>PS: Stay tuned for more such problem explanation and approaches</p>
+<p>Problem Credit : <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/">leetcode.com</a></p>
 
 
                 
@@ -273,11 +356,11 @@ Here comes the <code>max pool size</code> in context.</p>
                 <hr>
                 <ul class="pager">
                     
-                    
-                    <li class="next">
-                        <a href="/post/binary-tree-lowest-common-ancestor-lca/binary-tree-lowest-common-ancestor-lca/" data-toggle="tooltip" data-placement="top" title="Binary Tree: Lowest Common Ancestor (LCA)">Next
-                            Post &rarr;</a>
+                    <li class="previous">
+                        <a href="/post/demystifying_spring_task_executor/" data-toggle="tooltip" data-placement="top" title="Demystifying Spring Task Executor">&larr;
+                            Previous Post</a>
                     </li>
+                    
                     
                 </ul>
 
