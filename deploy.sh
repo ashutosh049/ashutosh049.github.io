@@ -1,24 +1,38 @@
-#!/bin/bash
+#!/bin/sh
 
-echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
+# If a command fails then the deploy stops
+set -e
+
+printf "\033[0;32mDeploying updates to GitHub...\033[0m\n"
+
+# Create commit message
+msg="rebuilding site $(date)"
+if [ -n "$*" ]; then
+	msg="$*"
+fi
 
 # Build the project.
-hugo # if using a theme, replace with `hugo -t <YOURTHEME>`
+echo ""
+echo ""
+echo "Committing changes to $(pwd)"
+hugo -D
 
 # Go To Public folder
 cd public
-# Add changes to git.
+
+# Add 'public' (Github Pages repo) changes to git and commit/push.
+echo ""
+echo ""
+echo "Committing changes to $(pwd)"
 git add .
-
-# Commit changes.
-msg="rebuilding site `date`"
-if [ $# -eq 1 ]
-  then msg="$1"
-fi
 git commit -m "$msg"
-
-# Push source and build repos.
 git push origin master
 
-# Come Back up to the Project Root
+# Add this repos changes to git and commit/push. First 'cd' out of public
 cd ..
+echo ""
+echo ""
+echo "Committing changes to $(pwd)"
+git add .
+git commit -m "$msg"
+git push origin master
