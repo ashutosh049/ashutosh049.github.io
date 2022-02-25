@@ -34,6 +34,21 @@ Problem Statement Given the root of a binary tree, return its maximum depth.
     </item>
     
     <item>
+      <title>Binary Tree: Path Sum Iterative Post Order approach and explanation</title>
+      <link>https://ashutosh049.github.io/post/binary-tree-path-sum-iterative-post-order-approach-and-explanation/binary-tree-path-sum-iterative-post-order-approach-and-explanation/</link>
+      <pubDate>Mon, 31 Aug 2020 13:09:42 -0600</pubDate>
+      
+      <guid>https://ashutosh049.github.io/post/binary-tree-path-sum-iterative-post-order-approach-and-explanation/binary-tree-path-sum-iterative-post-order-approach-and-explanation/</guid>
+      <description>Module: Binary Tree
+You can refer to the Leetcode problem 112. Path Sum
+Problem Statement Given the root of a binary tree and an integer targetSum, return true if the tree has a root-to-leaf path such that adding up all the values along the path equals targetSum.
+ A leaf is a node with no children.
+ Example 1:
+Input: root = [5,4,8,11,null,13,4,7,2,null,null,null,1], targetSum = 22
+Output: true Explanation: The root-to-leaf path with the target sum is shown.</description>
+    </item>
+    
+    <item>
       <title>Demystifying Spring Task Executor</title>
       <link>https://ashutosh049.github.io/post/demystifying_spring_task_executor/demystifying_spring_task_executor/</link>
       <pubDate>Mon, 31 Aug 2020 13:09:42 -0600</pubDate>
