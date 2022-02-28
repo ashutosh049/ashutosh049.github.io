@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linked List on Microlean</title>
+    <link>https://ashutosh049.github.io/series/linked-list/</link>
+    <description>Recent content in Linked List on Microlean</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 31 Aug 2020 13:09:42 -0600</lastBuildDate><atom:link href="https://ashutosh049.github.io/series/linked-list/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Add two numbers</title>
+      <link>https://ashutosh049.github.io/post/add_two_numbers/leetcode/</link>
+      <pubDate>Mon, 31 Aug 2020 13:09:42 -0600</pubDate>
+      
+      <guid>https://ashutosh049.github.io/post/add_two_numbers/leetcode/</guid>
+      <description>2. Add Two NumbersMediumYou are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum&amp;nbsp;as a linked list.
+You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+&amp;nbsp;
+Example 1:
+Input: l1 = [2,4,3], l2 = [5,6,4]Output: [7,0,8]Explanation: 342 + 465 = 807.</description>
+    </item>
+    
+  </channel>
+</rss>
