@@ -2,76 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ashutosh049.github.io/post/add_two_numbers/leetcode/</loc>
-    <lastmod>2020-08-31T13:09:42-06:00</lastmod>
+    <loc>https://ashutosh049.github.io/docs/leetcode/</loc>
   </url><url>
-    <loc>https://ashutosh049.github.io/tags/binary-tree/</loc>
-    <lastmod>2020-08-31T13:09:42-06:00</lastmod>
+    <loc>https://ashutosh049.github.io/docs/spring-framework/</loc>
   </url><url>
-    <loc>https://ashutosh049.github.io/series/binary-tree/</loc>
-    <lastmod>2020-08-31T13:09:42-06:00</lastmod>
+    <loc>https://ashutosh049.github.io/docs/leetcode/backtracking/</loc>
   </url><url>
-    <loc>https://ashutosh049.github.io/post/binary-tree-maximum-depth/leetcode/</loc>
-    <lastmod>2020-08-31T13:09:42-06:00</lastmod>
+    <loc>https://ashutosh049.github.io/docs/leetcode/binary-tree/</loc>
   </url><url>
-    <loc>https://ashutosh049.github.io/post/binary-tree-lowest-common-ancestor-lca/leetcode/</loc>
-    <lastmod>2020-08-31T13:09:42-06:00</lastmod>
+    <loc>https://ashutosh049.github.io/docs/leetcode/bit-manipulation/</loc>
   </url><url>
-    <loc>https://ashutosh049.github.io/post/binary-tree-path-sum/binary-tree-path-sum/</loc>
-    <lastmod>2020-08-31T13:09:42-06:00</lastmod>
+    <loc>https://ashutosh049.github.io/docs/leetcode/divide-and-conquer/</loc>
   </url><url>
-    <loc>https://ashutosh049.github.io/categories/</loc>
-    <lastmod>2020-08-31T13:09:42-06:00</lastmod>
+    <loc>https://ashutosh049.github.io/docs/leetcode/dynamic-programming/</loc>
   </url><url>
-    <loc>https://ashutosh049.github.io/post/demystifying_spring_task_executor/demystifying_spring_task_executor/</loc>
-    <lastmod>2020-08-31T13:09:42-06:00</lastmod>
+    <loc>https://ashutosh049.github.io/docs/leetcode/graphs/</loc>
   </url><url>
-    <loc>https://ashutosh049.github.io/tags/dsa/</loc>
-    <lastmod>2020-08-31T13:09:42-06:00</lastmod>
+    <loc>https://ashutosh049.github.io/docs/leetcode/binary-tree/maximum-depth-of-binary-tree/</loc>
   </url><url>
-    <loc>https://ashutosh049.github.io/tags/java/</loc>
-    <lastmod>2020-08-31T13:09:42-06:00</lastmod>
+    <loc>https://ashutosh049.github.io/docs/leetcode/binary-tree/lowest-common-ancestor-of-a-binary-tree/</loc>
   </url><url>
-    <loc>https://ashutosh049.github.io/tags/leetcode/</loc>
-    <lastmod>2020-08-31T13:09:42-06:00</lastmod>
-  </url><url>
-    <loc>https://ashutosh049.github.io/categories/leetcode/</loc>
-    <lastmod>2020-08-31T13:09:42-06:00</lastmod>
-  </url><url>
-    <loc>https://ashutosh049.github.io/tags/linked-list/</loc>
-    <lastmod>2020-08-31T13:09:42-06:00</lastmod>
-  </url><url>
-    <loc>https://ashutosh049.github.io/series/linked-list/</loc>
-    <lastmod>2020-08-31T13:09:42-06:00</lastmod>
+    <loc>https://ashutosh049.github.io/docs/leetcode/binary-tree/binary-tree-paths/</loc>
   </url><url>
     <loc>https://ashutosh049.github.io/</loc>
-    <lastmod>2020-08-31T13:09:42-06:00</lastmod>
+    <priority>0</priority>
   </url><url>
-    <loc>https://ashutosh049.github.io/post/</loc>
-    <lastmod>2020-08-31T13:09:42-06:00</lastmod>
+    <loc>https://ashutosh049.github.io/categories/</loc>
   </url><url>
-    <loc>https://ashutosh049.github.io/series/</loc>
-    <lastmod>2020-08-31T13:09:42-06:00</lastmod>
-  </url><url>
-    <loc>https://ashutosh049.github.io/tags/spring/</loc>
-    <lastmod>2020-08-31T13:09:42-06:00</lastmod>
+    <loc>https://ashutosh049.github.io/docs/</loc>
   </url><url>
     <loc>https://ashutosh049.github.io/tags/</loc>
-    <lastmod>2020-08-31T13:09:42-06:00</lastmod>
-  </url><url>
-    <loc>https://ashutosh049.github.io/categories/tech/</loc>
-    <lastmod>2020-08-31T13:09:42-06:00</lastmod>
-  </url><url>
-    <loc>https://ashutosh049.github.io/tags/threads/</loc>
-    <lastmod>2020-08-31T13:09:42-06:00</lastmod>
-  </url><url>
-    <loc>https://ashutosh049.github.io/tags/tree-traversal/</loc>
-    <lastmod>2020-08-31T13:09:42-06:00</lastmod>
-  </url><url>
-    <loc>https://ashutosh049.github.io/top/about/</loc>
-  </url><url>
-    <loc>https://ashutosh049.github.io/slug-/</loc>
-  </url><url>
-    <loc>https://ashutosh049.github.io/top/</loc>
   </url>
 </urlset>

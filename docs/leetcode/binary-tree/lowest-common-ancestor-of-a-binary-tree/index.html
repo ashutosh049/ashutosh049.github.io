@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="236. Lowest Common Ancestor of a Binary Tree# Problem Statement#Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
+ According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="236. Lowest Common Ancestor of a Binary Tree" />
+<meta property="og:description" content="236. Lowest Common Ancestor of a Binary Tree# Problem Statement#Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
+ According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ashutosh049.github.io/docs/leetcode/binary-tree/lowest-common-ancestor-of-a-binary-tree/" /><meta property="article:section" content="docs" />
+
+<meta property="og:site_name" content="Engineering &amp; Dev Essentials" />
+
+<title>236. Lowest Common Ancestor of a Binary Tree | µicrolean</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.f5c40df34e852c7502df972ef404eb3400c00dcc9af8a758f3c03457dcd3a78c.js" integrity="sha256-9cQN806FLHUC35cu9ATrNADADcya&#43;KdY88A0V9zTp4w=" crossorigin="anonymous"></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-XXXXXXXXX-X', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script><!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/favicon.png" alt="Logo" /><span>µicrolean</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Leetcode</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6da9ace552291ce9ff8db0339e4eb1ab" class="toggle"  />
+    <label for="section-6da9ace552291ce9ff8db0339e4eb1ab" class="flex justify-between">
+      <a role="button" class="">Backtracking</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0491dc995dceb0fec11cd03e37c3649c" class="toggle" checked />
+    <label for="section-0491dc995dceb0fec11cd03e37c3649c" class="flex justify-between">
+      <a role="button" class="">Binary Tree</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/leetcode/binary-tree/maximum-depth-of-binary-tree/" class="">104. Maximum Depth of Binary Tree</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/leetcode/binary-tree/lowest-common-ancestor-of-a-binary-tree/" class=" active">236. Lowest Common Ancestor of a Binary Tree</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/leetcode/binary-tree/binary-tree-paths/" class="">257. Binary Tree Paths</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-8cde142343014558ec9f3b0c6334c6c5" class="toggle"  />
+    <label for="section-8cde142343014558ec9f3b0c6334c6c5" class="flex justify-between">
+      <a role="button" class="">Bit Manipulation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d3afe0851d364c6d4bf011bab90c769b" class="toggle"  />
+    <label for="section-d3afe0851d364c6d4bf011bab90c769b" class="flex justify-between">
+      <a role="button" class="">Divide and Conquer</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6d2345efbdcd9efb72239133a436a6ff" class="toggle"  />
+    <label for="section-6d2345efbdcd9efb72239133a436a6ff" class="flex justify-between">
+      <a role="button" class="">Dynamic Programming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c77d0eb9c39dd89cec2e269c08a1f027" class="toggle"  />
+    <label for="section-c77d0eb9c39dd89cec2e269c08a1f027" class="flex justify-between">
+      <a role="button" class="">Graphs</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Spring Framework</span>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>236. Lowest Common Ancestor of a Binary Tree</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="236-lowest-common-ancestor-of-a-binary-treehttpsleetcodecomproblemslowest-common-ancestor-of-a-binary-tree">
+  
+  <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/">236. Lowest Common Ancestor of a Binary Tree</a>
+  <a class="anchor" href="#236-lowest-common-ancestor-of-a-binary-treehttpsleetcodecomproblemslowest-common-ancestor-of-a-binary-tree">#</a>
+</h1>
+<hr>
+<h4 id="problem-statement">
+  Problem Statement
+  <a class="anchor" href="#problem-statement">#</a>
+</h4>
+<p>Given a binary tree, find the <code>lowest common ancestor</code> (LCA) of two given nodes in the tree.</p>
+<blockquote>
+<p>According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).”</p>
+</blockquote>
+<hr>
+<h4 id="example-1">
+  Example 1:
+  <a class="anchor" href="#example-1">#</a>
+</h4>
+<!-- raw HTML omitted -->
+<p>Input: <code>root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1</code>
+Output: <code>3</code>
+Explanation: The LCA of nodes 5 and 1 is 3.</p>
+<h4 id="example-2">
+  Example 2:
+  <a class="anchor" href="#example-2">#</a>
+</h4>
+<!-- raw HTML omitted -->
+<p>Input: <code>root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 4</code>
+Output: <code>5</code>
+Explanation: The LCA of nodes 5 and 4 is 5, since a node can be a descendant of itself according to the LCA definition.</p>
+<hr>
+<h4 id="intuition">
+  Intuition
+  <a class="anchor" href="#intuition">#</a>
+</h4>
+<p>We need to find the common first parent which has both <code>p</code> and <code>q</code> as descendants.</p>
+<p>Consider the following Binary Tree:</p>
+<p>Input: root: <code>[1, 2, 3, 4, null, 5, 6, null, 7, null, 8, 9, 10, null, null, null, null,null, null, 11, 12]</code>
+p: <code>8</code>
+q : <code>11</code></p>
+<p>
+  <img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/75m60k49jyaqo1436722.png" alt="Image 1" /></p>
+<ul>
+<li>We can follow the recursive <code>pre-order dfs traversal</code> and go on comparing the current node with p and q.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>root <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><ul>
+<li>For each/any given node(root), check:
+<ol>
+<li>If <code>root</code> is <code>null</code>, then we return <code>null</code>.</li>
+<li>If the one of the nodes among <code>p</code> and <code>q</code> is <code>root</code> itself? It means we found a match and in that case, we need to return that node, the matched root.</li>
+</ol>
+</li>
+</ul>
+<p>So for this we can compare the the <code>root</code> with both p and q.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>root <span style="color:#f92672">==</span> p <span style="color:#f92672">||</span> root <span style="color:#f92672">==</span> q<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> root<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><ul>
+<li>
+<p>If any of the target nodes p/q does not exist in left child, it will be null. And similarly for right child, it will be null.</p>
+</li>
+<li>
+<p>Once a match is found in either left or right subtree, it is returned back(upward) to the recursive call and then compared with counter part (left or right value). If both the values are found, let say <code>p</code> is found in left subtree and <code>q</code> found in the right subtree, then the current root, parent of left and right is returned as lca.</p>
+</li>
+<li>
+<p>If none found, null will be returned.</p>
+</li>
+</ul>
+<p>
+  <img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5s035z2ouvi7f21j9z9k.png" alt="Image 2" /></p>
+<ul>
+<li>
+<p>Follow the blue arrows, when <code>8</code> is found(from <code>lca(root.right, 8, 11)</code> of root node <code>5</code>), it is compared with left child <code>null</code> and <code>8</code> is returned from the call stack of root <code>5</code>.</p>
+</li>
+<li>
+<p>Similarly, node <code>11</code> gets returned as a result of recursive call from root <code>3</code>.</p>
+</li>
+<li>
+<p>Finally, in the call stack of root node <code>3</code>, left node is <code>8</code> and right node is <code>11</code>. These 2 values are compared and since both are present(not null), current root (<code>3</code>) is returned which returned back till Tree root <code>1</code>.</p>
+</li>
+</ul>
+<hr>
+<h4 id="complexity-analysis">
+  Complexity Analysis
+  <a class="anchor" href="#complexity-analysis">#</a>
+</h4>
+<p><code>Time complexity</code>: <code>O(N)</code>, where <code>N</code> is the number of nodes in the binary tree. In the worst case(left skewed or right skewed) we might be visiting all the nodes of the binary tree.</p>
+<p><code>Space complexity</code>: <code>O(N)</code>. This is because the maximum amount of space utilized by the recursion stack would be <code>N</code> since the height of a skewed binary tree could be <code>N</code>.</p>
+<hr>
+<h4 id="program">
+  program
+  <a class="anchor" href="#program">#</a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> TreeNode <span style="color:#a6e22e">lowestCommonAncestor</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">,</span> TreeNode p<span style="color:#f92672">,</span> TreeNode q<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>root <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span> root <span style="color:#f92672">==</span> p <span style="color:#f92672">||</span> root <span style="color:#f92672">==</span> q<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> root<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        TreeNode lNode <span style="color:#f92672">=</span> lowestCommonAncestor<span style="color:#f92672">(</span>root<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span><span style="color:#f92672">,</span> p<span style="color:#f92672">,</span> q<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        TreeNode rNode <span style="color:#f92672">=</span> lowestCommonAncestor<span style="color:#f92672">(</span>root<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span><span style="color:#f92672">,</span> p<span style="color:#f92672">,</span> q<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>lNode <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> rNode<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>rNode <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> lNode<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> root<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h4 id="test-cases">
+  Test cases
+  <a class="anchor" href="#test-cases">#</a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">[</span>3<span style="color:#f92672">,</span>5<span style="color:#f92672">,</span>1<span style="color:#f92672">,</span>6<span style="color:#f92672">,</span>2<span style="color:#f92672">,</span>0<span style="color:#f92672">,</span>8<span style="color:#f92672">,</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span>7<span style="color:#f92672">,</span>4<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>5
+</span></span><span style="display:flex;"><span>1
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>3<span style="color:#f92672">,</span>5<span style="color:#f92672">,</span>1<span style="color:#f92672">,</span>6<span style="color:#f92672">,</span>2<span style="color:#f92672">,</span>0<span style="color:#f92672">,</span>8<span style="color:#f92672">,</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span>7<span style="color:#f92672">,</span>4<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>5
+</span></span><span style="display:flex;"><span>4
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>1<span style="color:#f92672">,</span>2<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>1
+</span></span><span style="display:flex;"><span>2
+</span></span></code></pre></div><hr>
+<h4 id="related-problems">
+  Related problems
+  <a class="anchor" href="#related-problems">#</a>
+</h4>
+<ul>
+<li>
+  <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree-ii/">Lowest Common Ancestor of a Binary Tree II</a></li>
+<li>
+  <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree-iii/">Lowest Common Ancestor of a Binary Tree III</a></li>
+<li>
+  <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree-iv/">Lowest Common Ancestor of a Binary Tree IV</a></li>
+</ul>
+<hr>
+<p>PS: Stay tuned for more such problem explanation and approaches</p>
+<p>Problem Credit : 
+  <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/">leetcode.com</a></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "microlean" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

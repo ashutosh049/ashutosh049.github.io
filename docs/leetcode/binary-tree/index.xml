@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>µicrolean</title>
+    <link>https://ashutosh049.github.io/docs/leetcode/binary-tree/</link>
+    <description>Recent content on µicrolean</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://ashutosh049.github.io/docs/leetcode/binary-tree/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>104. Maximum Depth of Binary Tree</title>
+      <link>https://ashutosh049.github.io/docs/leetcode/binary-tree/maximum-depth-of-binary-tree/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ashutosh049.github.io/docs/leetcode/binary-tree/maximum-depth-of-binary-tree/</guid>
+      <description>104. Maximum Depth of Binary Tree#Problem Statement#Given the root of a binary tree, return its maximum depth.
+ A binary tree&amp;rsquo;s maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
+ Example 1:
+ (3)/ \(9) (20)/ \(15) (7) Input: root = [3,9,20,null,null,15,7] Output: 3
+The calling function#/** * Definition for a binary tree node.</description>
+    </item>
+    
+    <item>
+      <title>236. Lowest Common Ancestor of a Binary Tree</title>
+      <link>https://ashutosh049.github.io/docs/leetcode/binary-tree/lowest-common-ancestor-of-a-binary-tree/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ashutosh049.github.io/docs/leetcode/binary-tree/lowest-common-ancestor-of-a-binary-tree/</guid>
+      <description>236. Lowest Common Ancestor of a Binary Tree# Problem Statement#Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
+ According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).</description>
+    </item>
+    
+    <item>
+      <title>257. Binary Tree Paths</title>
+      <link>https://ashutosh049.github.io/docs/leetcode/binary-tree/binary-tree-paths/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ashutosh049.github.io/docs/leetcode/binary-tree/binary-tree-paths/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
