@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="173. Binary Search Tree IteratorMediumImplement the BSTIterator class that represents an iterator overthe in-order traversal of a binary search tree (BST):
+BSTIterator(TreeNode root) Initializes an object of the BSTIterator class. The root of the BST is given as part of the constructor. The pointer should be initialized to a non-existent number smaller than any element in the BST.boolean hasNext() Returns true if there exists a number in the traversal to the right of the pointer, otherwise returns false.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="173. Binary Search Tree Iterator" />
+<meta property="og:description" content="173. Binary Search Tree IteratorMediumImplement the BSTIterator class that represents an iterator overthe in-order traversal of a binary search tree (BST):
+BSTIterator(TreeNode root) Initializes an object of the BSTIterator class. The root of the BST is given as part of the constructor. The pointer should be initialized to a non-existent number smaller than any element in the BST.boolean hasNext() Returns true if there exists a number in the traversal to the right of the pointer, otherwise returns false." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ashutosh049.github.io/leetcode/binary-tree/binary_search_tree_iterator/" /><meta property="article:section" content="leetcode" />
+
+
+
+<title>173. Binary Search Tree Iterator | µicrolean</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.3135b6006d22219d327f0f98c65dd66cfd4263014ae6c47d245e669334f1264c.css" integrity="sha256-MTW2AG0iIZ0yfw&#43;Yxl3WbP1CYwFK5sR9JF5mkzTxJkw=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.9c2aff8f386a439f55f0d4bc2ef1ec980b61c242ab331a15f9d160b3384de79b.js" integrity="sha256-nCr/jzhqQ59V8NS8LvHsmAthwkKrMxoV&#43;dFgszhN55s=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/favicon.png" alt="Logo" /><span>µicrolean</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-99570b6469c6a1058afdaafdd384bb2f" class="toggle" checked />
+    <label for="section-99570b6469c6a1058afdaafdd384bb2f" class="flex justify-between">
+      <a href="/leetcode/" class="">Leetcode</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-409070daa2cadd85e99d50b3e3377157" class="toggle"  />
+    <label for="section-409070daa2cadd85e99d50b3e3377157" class="flex justify-between">
+      <a role="button" class="">Arrays and String Manipulation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3e7fa6efd6e9562dc187ac291a8808c5" class="toggle" checked />
+    <label for="section-3e7fa6efd6e9562dc187ac291a8808c5" class="flex justify-between">
+      <a role="button" class="">Binary Tree</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/leetcode/binary-tree/maximum-depth-of-binary-tree/" class="">104. Maximum Depth of Binary Tree</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/leetcode/binary-tree/balanced_binary_tree/" class="">110. Balanced Binary Tree</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/leetcode/binary-tree/binary_search_tree_iterator/" class=" active">173. Binary Search Tree Iterator</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/leetcode/binary-tree/lowest-common-ancestor-of-a-binary-tree/" class="">236. Lowest Common Ancestor of a Binary Tree</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/leetcode/binary-tree/binary-tree-paths/" class="">257. Binary Tree Paths</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/leetcode/binary-tree/binary_search/" class="">704. Binary Search</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/leetcode/binary-tree/binary_tree_cameras/" class="">968. Binary Tree Cameras</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-41b671e62aadaca7d5be898ecc9a88bf" class="toggle"  />
+    <label for="section-41b671e62aadaca7d5be898ecc9a88bf" class="flex justify-between">
+      <a role="button" class="">Bit Manipulation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/leetcode/bit-manipulation/number-of-1-bits/" class="">191. Number of 1 Bits</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-98c230251e449d5a486344509138a49a" class="toggle"  />
+    <label for="section-98c230251e449d5a486344509138a49a" class="flex justify-between">
+      <a role="button" class="">Divide and Conquer</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-029718e74e4ce23eba823bc8a8e03ea0" class="toggle"  />
+    <label for="section-029718e74e4ce23eba823bc8a8e03ea0" class="flex justify-between">
+      <a role="button" class="">Dynamic Programming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-bc6595974878ff7bbe9072f5562b0050" class="toggle"  />
+    <label for="section-bc6595974878ff7bbe9072f5562b0050" class="flex justify-between">
+      <a role="button" class="">Graphs</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5fe69078b3f918f213d933671567009f" class="toggle"  />
+    <label for="section-5fe69078b3f918f213d933671567009f" class="flex justify-between">
+      <a role="button" class="">Searching</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-474ec6849ce1e4aac3c3bcca7d1b7e62" class="toggle"  />
+    <label for="section-474ec6849ce1e4aac3c3bcca7d1b7e62" class="flex justify-between">
+      <a role="button" class="">Sorting</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-12bf54ab1974e1ec2ae8ede403ac3841" class="toggle"  />
+    <label for="section-12bf54ab1974e1ec2ae8ede403ac3841" class="flex justify-between">
+      <a href="/leetcode/sorting/selection-algos/" class="">Selection Algos</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>Backtracking</span>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6301def133ee0dadb159cafddccda9e8" class="toggle"  />
+    <label for="section-6301def133ee0dadb159cafddccda9e8" class="flex justify-between">
+      <a href="/spring-framework/" class="">Spring Framework</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/about/" class="">About</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>173. Binary Search Tree Iterator</strong>
+
+  <label for="toc-control">
+    
+  </label>
+</div>
+
+
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h2>173. Binary Search Tree Iterator</h2><h3>Medium</h3><hr><div><p>Implement the <code>
+BSTIterator</code> class that represents an iterator over
+the <strong><a href="https://en.wikipedia.org/wiki/Tree_traversal#In-order_(LNR)" target="_blank">
+in-order traversal</a></strong> of a binary search tree (BST):</p>
+<ul>
+	<li><code>BSTIterator(TreeNode root)</code> Initializes an object of the <code>BSTIterator</code> class. The <code>root</code> of the BST is given as part of the constructor. The pointer should be initialized to a non-existent number smaller than any element in the BST.</li>
+	<li><code>boolean hasNext()</code> Returns <code>true</code> if there exists a number in the traversal to the right of the pointer, otherwise returns <code>false</code>.</li>
+	<li><code>int next()</code> Moves the pointer to the right, then returns the number at the pointer.</li>
+</ul>
+<p>Notice that by initializing the pointer to a non-existent smallest number, the first call to <code>next()</code> will return the smallest element in the BST.</p>
+<p>You may assume that <code>next()</code> calls will always be valid. That is, there will be at least a next number in the in-order traversal when <code>next()</code> is called.</p>
+<p>&nbsp;</p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2018/12/25/bst-tree.png" style="width: 189px; height: 178px;">
+<pre><strong>Input</strong>
+["BSTIterator", "next", "next", "hasNext", "next", "hasNext", "next", "hasNext", "next", "hasNext"]
+[[[7, 3, 15, null, null, 9, 20]], [], [], [], [], [], [], [], [], []]
+<strong>Output</strong>
+[null, 3, 7, true, 9, true, 15, true, 20, false]
+<p><strong>Explanation</strong>
+BSTIterator bSTIterator = new BSTIterator([7, 3, 15, null, null, 9, 20]); bSTIterator.next(); //
+return 3 bSTIterator.next(); // return 7 bSTIterator.hasNext(); // return True bSTIterator.next();
+// return 9 bSTIterator.hasNext(); // return True bSTIterator.next(); // return 15
+bSTIterator.hasNext(); // return True bSTIterator.next(); // return 20 bSTIterator.hasNext(); //
+return False
+</pre></p>
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+<ul>
+	<li>The number of nodes in the tree is in the range <code>[1, 10<sup>5</sup>]</code>.</li>
+	<li><code>0 &lt;= Node.val &lt;= 10<sup>6</sup></code></li>
+	<li>At most <code>10<sup>5</sup></code> calls will be made to <code>hasNext</code>, and <code>next</code>.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Follow up:</strong></p>
+<ul>
+	<li>Could you implement <code>next()</code> and <code>hasNext()</code> to run in average <code>O(1)</code> time and use&nbsp;<code>O(h)</code> memory, where <code>h</code> is the height of the tree?</li>
+</ul>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Definition for a binary tree node.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * public class TreeNode {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *     int val;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *     TreeNode left;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *     TreeNode right;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *     TreeNode() {}
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *     TreeNode(int val) { this.val = val; }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *     TreeNode(int val, TreeNode left, TreeNode right) {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *         this.val = val;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *         this.left = left;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *         this.right = right;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *     }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BSTIterator</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> TreeNode root<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> index<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> inorder<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> iList<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> i<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">BSTIterator</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">root</span> <span style="color:#f92672">=</span> root<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        init<span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">root</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">next</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> inorder<span style="color:#f92672">[</span>index<span style="color:#f92672">++];</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">hasNext</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#f92672">(</span>index<span style="color:#f92672">+</span>1<span style="color:#f92672">)</span> <span style="color:#f92672">&lt;=</span> inorder<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">init</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">iList</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
+</span></span><span style="display:flex;"><span>        inorderRecursive<span style="color:#f92672">(</span>root<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        inorder <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>iList<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">()];</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> e<span style="color:#f92672">:</span> iList<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>            inorder<span style="color:#f92672">[</span>i<span style="color:#f92672">++]</span> <span style="color:#f92672">=</span> e<span style="color:#f92672">;</span> 
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//3, 7, 9, 15, 20
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">inorderRecursive</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>root <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">return</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        inorderRecursive<span style="color:#f92672">(</span>root<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        iList<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>root<span style="color:#f92672">.</span><span style="color:#a6e22e">val</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        inorderRecursive<span style="color:#f92672">(</span>root<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Your BSTIterator object will be instantiated and called as such:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * BSTIterator obj = new BSTIterator(root);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * int param_1 = obj.next();
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * boolean param_2 = obj.hasNext();
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span> </span></span></code></pre></div>
+<hr>
+<div class="book-columns flex flex-wrap">
+
+  <div class="flex-even markdown-inner">
+    <a  href="/leetcode/binary-tree/balanced_binary_tree/"   class="book-btn ">
+<p><span class="fontawesome-inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill='currentColor' d="M256 0C114.6 0 0 114.6 0 256c0 141.4 114.6 256 256 256s256-114.6 256-256C512 114.6 397.4 0 256 0zM384 288H205.3l49.38 49.38c12.5 12.5 12.5 32.75 0 45.25s-32.75 12.5-45.25 0L105.4 278.6C97.4 270.7 96 260.9 96 256c0-4.883 1.391-14.66 9.398-22.65l103.1-103.1c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L205.3 224H384c17.69 0 32 14.33 32 32S401.7 288 384 288z"/></svg>
+</span> 110. Balanced Binary Tree</p>
+</a>
+
+  </div>
+
+  <div class="flex-even markdown-inner">
+    <a  href="/leetcode/binary-tree/lowest-common-ancestor-of-a-binary-tree/"   class="book-btn ">
+<ol start="236">
+<li>Lowest Common Ancestor of a Binary Tree <span class="fontawesome-inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill='currentColor' d="M256 0C114.6 0 0 114.6 0 256c0 141.4 114.6 256 256 256s256-114.6 256-256C512 114.6 397.4 0 256 0zM406.6 278.6l-103.1 103.1c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25L306.8 288H128C110.3 288 96 273.7 96 256s14.31-32 32-32h178.8l-49.38-49.38c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l103.1 103.1C414.6 241.3 416 251.1 416 256C416 260.9 414.6 270.7 406.6 278.6z"/></svg>
+</span></li>
+</ol>
+</a>
+
+  </div>
+
+</div>
+
+<hr>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+  <div>
+    <p class="copyright text-muted text-center">
+      Copyright &copy; µicrolean 2022
+      <br>
+    </p>
+    <p class="copyright text-muted text-center">
+      <b> Disclaimer</b>: Any product names, logos, symbols, images taken for reference purpose from
+      <a href="https://leetcode.com">Leetcode.com</a> remain the property of <a href="https://leetcode.com">Leetcode, LLC</a>
+      </br></p>
+    <p class="copyright text-muted text-center">
+      This blog does not accept compensation in any form from any person, organization, or company.
+      There are no ads, there are no sponsorships, and there are no commissions. If it's written
+      here, you can be assured no one has requested, demanded, approved, endorsed, or paid for the
+      content you see, including my current employer.
+      </br>
+    </p>
+  </div>
+
+</div>
+
+
+
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

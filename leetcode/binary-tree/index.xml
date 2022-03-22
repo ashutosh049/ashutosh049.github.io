@@ -2,19 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>µicrolean</title>
-    <link>https://ashutosh049.github.io/</link>
+    <link>https://ashutosh049.github.io/leetcode/binary-tree/</link>
     <description>Recent content on µicrolean</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://ashutosh049.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title></title>
-      <link>https://ashutosh049.github.io/leetcode/template/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ashutosh049.github.io/leetcode/template/</guid>
-      <description>Leetcode Problem# Problem#Example#Example 1:#Constraints#Follow up# Approach and Intuition#1. Naive approach#Time Complexity: \( O(n) \)Space Complexity: \( O(1) \) Complete Solution# </description>
-    </item>
-    
+    <language>en-us</language><atom:link href="https://ashutosh049.github.io/leetcode/binary-tree/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>104. Maximum Depth of Binary Tree</title>
       <link>https://ashutosh049.github.io/leetcode/binary-tree/maximum-depth-of-binary-tree/</link>
@@ -50,17 +41,6 @@ Input: root = []Output: true&amp;nbsp;</description>
       <guid>https://ashutosh049.github.io/leetcode/binary-tree/binary_search_tree_iterator/</guid>
       <description>173. Binary Search Tree IteratorMediumImplement the BSTIterator class that represents an iterator overthe in-order traversal of a binary search tree (BST):
 BSTIterator(TreeNode root) Initializes an object of the BSTIterator class. The root of the BST is given as part of the constructor. The pointer should be initialized to a non-existent number smaller than any element in the BST.boolean hasNext() Returns true if there exists a number in the traversal to the right of the pointer, otherwise returns false.</description>
-    </item>
-    
-    <item>
-      <title>191. Number of 1 Bits</title>
-      <link>https://ashutosh049.github.io/leetcode/bit-manipulation/number-of-1-bits/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ashutosh049.github.io/leetcode/bit-manipulation/number-of-1-bits/</guid>
-      <description>191. Number of 1 Bits# Problem#Write a function that takes an unsigned integer and returns the number of &amp;lsquo;1&amp;rsquo; bits it has (also known as the Hamming weight).
-Note:
- Note that in some languages, such as Java, there is no unsigned integer type. In this case, the input will be given as a signed integer type. It should not affect your implementation, as the integer&amp;rsquo;s internal binary representation is the same, whether it is signed or unsigned.</description>
     </item>
     
     <item>
@@ -112,15 +92,6 @@ Input: nums = [-1,0,3,5,9,12], target = 9Output: 4Explanation: 9 exists in num
 Return the minimum number of cameras needed to monitor all nodes of the tree.
 Example#Example 1:#Example 1:
 Input: root = [0,0,null,0,0]Output: 1Explanation: One camera is enough to monitor all nodes if placed as shown.</description>
-    </item>
-    
-    <item>
-      <title>Quick Select</title>
-      <link>https://ashutosh049.github.io/leetcode/sorting/selection-algos/quick-select/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ashutosh049.github.io/leetcode/sorting/selection-algos/quick-select/</guid>
-      <description></description>
     </item>
     
   </channel>

@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="257. Binary Tree PathsGiven the root of a binary tree, return all root-to-leaf pathsin any order.
+A leaf is a node with no children.
+&nbsp;
+Example 1:
+Input: root = [1,2,3,null,5]Output: [&#34;1-&gt;2-&gt;5&#34;,&#34;1-&gt;3&#34;]Example 2:
+Input: root = [1]Output: [&#34;1&#34;]&nbsp;
+Constraints:
+The number of nodes in the tree is in the range [1, 100].-100 &lt;= Node.val &lt;= 100program#Javaclass Solution {  List&lt;String&gt; res;  public List&lt;String&gt; binaryTreePaths(TreeNode root) {   //return binaryTreePaths_dfs_iterative(root);   this.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="257. Binary Tree Paths" />
+<meta property="og:description" content="257. Binary Tree PathsGiven the root of a binary tree, return all root-to-leaf pathsin any order.
+A leaf is a node with no children.
+&nbsp;
+Example 1:
+Input: root = [1,2,3,null,5]Output: [&#34;1-&gt;2-&gt;5&#34;,&#34;1-&gt;3&#34;]Example 2:
+Input: root = [1]Output: [&#34;1&#34;]&nbsp;
+Constraints:
+The number of nodes in the tree is in the range [1, 100].-100 &lt;= Node.val &lt;= 100program#Javaclass Solution {  List&lt;String&gt; res;  public List&lt;String&gt; binaryTreePaths(TreeNode root) {   //return binaryTreePaths_dfs_iterative(root);   this." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ashutosh049.github.io/leetcode/binary-tree/binary-tree-paths/" /><meta property="article:section" content="leetcode" />
+
+
+
+<title>257. Binary Tree Paths | µicrolean</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.3135b6006d22219d327f0f98c65dd66cfd4263014ae6c47d245e669334f1264c.css" integrity="sha256-MTW2AG0iIZ0yfw&#43;Yxl3WbP1CYwFK5sR9JF5mkzTxJkw=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.9c2aff8f386a439f55f0d4bc2ef1ec980b61c242ab331a15f9d160b3384de79b.js" integrity="sha256-nCr/jzhqQ59V8NS8LvHsmAthwkKrMxoV&#43;dFgszhN55s=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/favicon.png" alt="Logo" /><span>µicrolean</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-99570b6469c6a1058afdaafdd384bb2f" class="toggle" checked />
+    <label for="section-99570b6469c6a1058afdaafdd384bb2f" class="flex justify-between">
+      <a href="/leetcode/" class="">Leetcode</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-409070daa2cadd85e99d50b3e3377157" class="toggle"  />
+    <label for="section-409070daa2cadd85e99d50b3e3377157" class="flex justify-between">
+      <a role="button" class="">Arrays and String Manipulation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3e7fa6efd6e9562dc187ac291a8808c5" class="toggle" checked />
+    <label for="section-3e7fa6efd6e9562dc187ac291a8808c5" class="flex justify-between">
+      <a role="button" class="">Binary Tree</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/leetcode/binary-tree/maximum-depth-of-binary-tree/" class="">104. Maximum Depth of Binary Tree</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/leetcode/binary-tree/balanced_binary_tree/" class="">110. Balanced Binary Tree</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/leetcode/binary-tree/binary_search_tree_iterator/" class="">173. Binary Search Tree Iterator</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/leetcode/binary-tree/lowest-common-ancestor-of-a-binary-tree/" class="">236. Lowest Common Ancestor of a Binary Tree</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/leetcode/binary-tree/binary-tree-paths/" class=" active">257. Binary Tree Paths</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/leetcode/binary-tree/binary_search/" class="">704. Binary Search</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/leetcode/binary-tree/binary_tree_cameras/" class="">968. Binary Tree Cameras</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-41b671e62aadaca7d5be898ecc9a88bf" class="toggle"  />
+    <label for="section-41b671e62aadaca7d5be898ecc9a88bf" class="flex justify-between">
+      <a role="button" class="">Bit Manipulation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/leetcode/bit-manipulation/number-of-1-bits/" class="">191. Number of 1 Bits</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-98c230251e449d5a486344509138a49a" class="toggle"  />
+    <label for="section-98c230251e449d5a486344509138a49a" class="flex justify-between">
+      <a role="button" class="">Divide and Conquer</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-029718e74e4ce23eba823bc8a8e03ea0" class="toggle"  />
+    <label for="section-029718e74e4ce23eba823bc8a8e03ea0" class="flex justify-between">
+      <a role="button" class="">Dynamic Programming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-bc6595974878ff7bbe9072f5562b0050" class="toggle"  />
+    <label for="section-bc6595974878ff7bbe9072f5562b0050" class="flex justify-between">
+      <a role="button" class="">Graphs</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5fe69078b3f918f213d933671567009f" class="toggle"  />
+    <label for="section-5fe69078b3f918f213d933671567009f" class="flex justify-between">
+      <a role="button" class="">Searching</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-474ec6849ce1e4aac3c3bcca7d1b7e62" class="toggle"  />
+    <label for="section-474ec6849ce1e4aac3c3bcca7d1b7e62" class="flex justify-between">
+      <a role="button" class="">Sorting</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-12bf54ab1974e1ec2ae8ede403ac3841" class="toggle"  />
+    <label for="section-12bf54ab1974e1ec2ae8ede403ac3841" class="flex justify-between">
+      <a href="/leetcode/sorting/selection-algos/" class="">Selection Algos</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>Backtracking</span>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6301def133ee0dadb159cafddccda9e8" class="toggle"  />
+    <label for="section-6301def133ee0dadb159cafddccda9e8" class="flex justify-between">
+      <a href="/spring-framework/" class="">Spring Framework</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/about/" class="">About</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>257. Binary Tree Paths</strong>
+
+  <label for="toc-control">
+    
+  </label>
+</div>
+
+
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h2><a href="https://leetcode.com/problems/binary-tree-paths/">257. Binary Tree Paths</a></h2>
+<p>
+  <img src="/images/leetcode_lvl_badges/easy.svg" alt="Leetcode Easy" /></p>
+<hr><div><p>Given the <code>root</code> of a binary tree, return <em>all root-to-leaf paths
+in <strong>any order</strong></em>.</p>
+<p>A <strong>leaf</strong> is a node with no children.</p>
+<p>&nbsp;</p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/03/12/paths-tree.jpg" style="width: 207px; height: 293px;">
+<pre><strong>Input:</strong> root = [1,2,3,null,5]
+<strong>Output:</strong> ["1-&gt;2-&gt;5","1-&gt;3"]
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> root = [1]
+<strong>Output:</strong> ["1"]
+</pre>
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+<ul>
+	<li>The number of nodes in the tree is in the range <code>[1, 100]</code>.</li>
+	<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
+</ul>
+</div>
+<h3 id="program">
+  program
+  <a class="anchor" href="#program">#</a>
+</h3>
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-binary-tree-paths" id="tabs-binary-tree-paths-0" checked="checked" />
+  <label for="tabs-binary-tree-paths-0">Java</label>
+  <div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> res<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">binaryTreePaths</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>       
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//return binaryTreePaths_dfs_iterative(root);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">res</span><span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;();</span>
+</span></span><span style="display:flex;"><span>        binaryTreePaths_dfs_recursive<span style="color:#f92672">(</span>root<span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> StringBuilder<span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">res</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">binaryTreePaths_dfs_iterative</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> out <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>root <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> out<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        Deque<span style="color:#f92672">&lt;</span>TreeNode<span style="color:#f92672">&gt;</span> nodeStack <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayDeque<span style="color:#f92672">&lt;&gt;();</span>
+</span></span><span style="display:flex;"><span>        TreeNode curr <span style="color:#f92672">=</span> root<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        TreeNode pre <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        StringBuilder sb <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> StringBuilder<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span><span style="color:#f92672">(</span>curr <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> <span style="color:#f92672">!</span>nodeStack<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">()){</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>curr <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>sb<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()</span> <span style="color:#f92672">&gt;</span> 0<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>                    sb<span style="color:#f92672">.</span><span style="color:#a6e22e">append</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;-&gt;&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>                sb<span style="color:#f92672">.</span><span style="color:#a6e22e">append</span><span style="color:#f92672">(</span>curr<span style="color:#f92672">.</span><span style="color:#a6e22e">val</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                nodeStack<span style="color:#f92672">.</span><span style="color:#a6e22e">push</span><span style="color:#f92672">(</span>curr<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                curr <span style="color:#f92672">=</span> curr<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span><span style="color:#66d9ef">else</span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                curr <span style="color:#f92672">=</span> nodeStack<span style="color:#f92672">.</span><span style="color:#a6e22e">peek</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// if leaf node
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>curr<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> curr<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>                    out<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>sb<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>curr<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> curr<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span> <span style="color:#f92672">==</span> pre<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>                    curr <span style="color:#f92672">=</span> nodeStack<span style="color:#f92672">.</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>                    
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">int</span> currAppendedStringLength <span style="color:#f92672">=</span> String<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>curr<span style="color:#f92672">.</span><span style="color:#a6e22e">val</span><span style="color:#f92672">).</span><span style="color:#a6e22e">length</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>                    
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>sb<span style="color:#f92672">.</span><span style="color:#a6e22e">lastIndexOf</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;-&gt;&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">&gt;</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>                        currAppendedStringLength <span style="color:#f92672">+=</span>2 <span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>                        sb<span style="color:#f92672">.</span><span style="color:#a6e22e">delete</span><span style="color:#f92672">(</span>sb<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()-</span>currAppendedStringLength<span style="color:#f92672">,</span> sb<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>                    
+</span></span><span style="display:flex;"><span>                    pre <span style="color:#f92672">=</span> curr<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>                    curr <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span><span style="color:#66d9ef">else</span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                    curr<span style="color:#f92672">=</span> curr<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> out<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">binaryTreePaths_dfs_recursive</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">,</span> StringBuilder pathBuilder<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>root <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>pathBuilder<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()</span> <span style="color:#f92672">&gt;=</span> 1<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>            pathBuilder<span style="color:#f92672">.</span><span style="color:#a6e22e">append</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;-&gt;&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        pathBuilder<span style="color:#f92672">.</span><span style="color:#a6e22e">append</span><span style="color:#f92672">(</span>root<span style="color:#f92672">.</span><span style="color:#a6e22e">val</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        binaryTreePaths_dfs_recursive<span style="color:#f92672">(</span>root<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> StringBuilder<span style="color:#f92672">(</span>pathBuilder<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">()));</span>
+</span></span><span style="display:flex;"><span>        binaryTreePaths_dfs_recursive<span style="color:#f92672">(</span>root<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> StringBuilder<span style="color:#f92672">(</span>pathBuilder<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">()));</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>root<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> root<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">res</span><span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>pathBuilder<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div></div><input type="radio" class="toggle" name="tabs-binary-tree-paths" id="tabs-binary-tree-paths-1"  />
+  <label for="tabs-binary-tree-paths-1">C&#43;&#43;</label>
+  <div class="book-tabs-content markdown-inner"></div><input type="radio" class="toggle" name="tabs-binary-tree-paths" id="tabs-binary-tree-paths-2"  />
+  <label for="tabs-binary-tree-paths-2">Python</label>
+  <div class="book-tabs-content markdown-inner"></div><input type="radio" class="toggle" name="tabs-binary-tree-paths" id="tabs-binary-tree-paths-3"  />
+  <label for="tabs-binary-tree-paths-3">Javascript</label>
+  <div class="book-tabs-content markdown-inner"></div></div>
+
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+  <div>
+    <p class="copyright text-muted text-center">
+      Copyright &copy; µicrolean 2022
+      <br>
+    </p>
+    <p class="copyright text-muted text-center">
+      <b> Disclaimer</b>: Any product names, logos, symbols, images taken for reference purpose from
+      <a href="https://leetcode.com">Leetcode.com</a> remain the property of <a href="https://leetcode.com">Leetcode, LLC</a>
+      </br></p>
+    <p class="copyright text-muted text-center">
+      This blog does not accept compensation in any form from any person, organization, or company.
+      There are no ads, there are no sponsorships, and there are no commissions. If it's written
+      here, you can be assured no one has requested, demanded, approved, endorsed, or paid for the
+      content you see, including my current employer.
+      </br>
+    </p>
+  </div>
+
+</div>
+
+
+
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

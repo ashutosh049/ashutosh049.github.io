@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
 <head>
-	<meta name="generator" content="Hugo 0.93.2" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="
-Hello visitor, Welcome to µicrolean!
-I’m Ashutosh. This is a place for me to write gome geek stuff and record my learning.
-You might wanna try searching for your topic in the search box ;)
-Hope you guys find something interesting here! Let&rsquo;s get started!">
+<meta name="description" content="704. Binary SearchEasyGiven an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.
+You must write an algorithm with O(log n) runtime complexity.
+&nbsp;
+Example 1:
+Input: nums = [-1,0,3,5,9,12], target = 9Output: 4Explanation: 9 exists in nums and its index is 4Example 2:">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://ashutosh049.github.io/" />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="704. Binary Search" />
+<meta property="og:description" content="704. Binary SearchEasyGiven an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.
+You must write an algorithm with O(log n) runtime complexity.
+&nbsp;
+Example 1:
+Input: nums = [-1,0,3,5,9,12], target = 9Output: 4Explanation: 9 exists in nums and its index is 4Example 2:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ashutosh049.github.io/leetcode/binary-tree/binary_search/" /><meta property="article:section" content="leetcode" />
 
-<title> | µicrolean</title>
+
+
+<title>704. Binary Search | µicrolean</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.3135b6006d22219d327f0f98c65dd66cfd4263014ae6c47d245e669334f1264c.css" integrity="sha256-MTW2AG0iIZ0yfw&#43;Yxl3WbP1CYwFK5sR9JF5mkzTxJkw=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
   <script defer src="/en.search.min.9c2aff8f386a439f55f0d4bc2ef1ec980b61c242ab331a15f9d160b3384de79b.js" integrity="sha256-nCr/jzhqQ59V8NS8LvHsmAthwkKrMxoV&#43;dFgszhN55s=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="https://ashutosh049.github.io/index.xml" title="µicrolean" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -75,7 +79,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-99570b6469c6a1058afdaafdd384bb2f" class="toggle"  />
+    <input type="checkbox" id="section-99570b6469c6a1058afdaafdd384bb2f" class="toggle" checked />
     <label for="section-99570b6469c6a1058afdaafdd384bb2f" class="flex justify-between">
       <a href="/leetcode/" class="">Leetcode</a>
     </label>
@@ -112,7 +116,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3e7fa6efd6e9562dc187ac291a8808c5" class="toggle"  />
+    <input type="checkbox" id="section-3e7fa6efd6e9562dc187ac291a8808c5" class="toggle" checked />
     <label for="section-3e7fa6efd6e9562dc187ac291a8808c5" class="flex justify-between">
       <a role="button" class="">Binary Tree</a>
     </label>
@@ -193,7 +197,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/leetcode/binary-tree/binary_search/" class="">704. Binary Search</a>
+    <a href="/leetcode/binary-tree/binary_search/" class=" active">704. Binary Search</a>
   
 
         </li>
@@ -477,7 +481,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong></strong>
+  <strong>704. Binary Search</strong>
 
   <label for="toc-control">
     
@@ -491,37 +495,41 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><br>
-<br>
-<div class="book-columns flex flex-wrap">
-
-  <div class="flex-even markdown-inner">
-    <p><code>Hello visitor, Welcome to µicrolean!</code></p>
-<p><code>I’m Ashutosh. This is a place for me to write gome geek stuff and record my learning.</code></p>
-<p><code>You might wanna try searching for your topic in the search box ;)</code></p>
-<br>
-<p><code>Hope you guys find something interesting here!</code>
-<br></p>
-<a  href="/leetcode/"   class="book-btn  book-hint info hint-color-info text-color-info">
-Let&rsquo;s get started!
-</a>
-
-  </div>
-
-  <div class="flex-even markdown-inner">
-    <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<p>
-  <img src="/images/banners/Programmer-boy.svg" alt="" />
-  </div>
-
+  <article class="markdown"><h2>704. Binary Search</h2><h3>Easy</h3><hr><div><p>Given an array of integers <code>nums</code> which is sorted in ascending order, and an integer <code>target</code>, write a function to search <code>target</code> in <code>nums</code>. If <code>target</code> exists, then return its index. Otherwise, return <code>-1</code>.</p>
+<p>You must write an algorithm with <code>O(log n)</code> runtime complexity.</p>
+<p>&nbsp;</p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [-1,0,3,5,9,12], target = 9
+<strong>Output:</strong> 4
+<strong>Explanation:</strong> 9 exists in nums and its index is 4
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [-1,0,3,5,9,12], target = 2
+<strong>Output:</strong> -1
+<strong>Explanation:</strong> 2 does not exist in nums so return -1
+</pre>
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+<ul>
+	<li><code>1 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
+	<li><code>-10<sup>4</sup> &lt; nums[i], target &lt; 10<sup>4</sup></code></li>
+	<li>All the integers in <code>nums</code> are <strong>unique</strong>.</li>
+	<li><code>nums</code> is sorted in ascending order.</li>
+</ul>
 </div>
-
-</article>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">search</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> nums<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> target<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> pivot<span style="color:#f92672">,</span> left <span style="color:#f92672">=</span> 0<span style="color:#f92672">,</span> right <span style="color:#f92672">=</span> nums<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>left <span style="color:#f92672">&lt;=</span> right<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>          pivot <span style="color:#f92672">=</span> left <span style="color:#f92672">+</span> <span style="color:#f92672">(</span>right <span style="color:#f92672">-</span> left<span style="color:#f92672">)</span> <span style="color:#f92672">/</span> 2<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>nums<span style="color:#f92672">[</span>pivot<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> target<span style="color:#f92672">)</span> <span style="color:#66d9ef">return</span> pivot<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>target <span style="color:#f92672">&lt;</span> nums<span style="color:#f92672">[</span>pivot<span style="color:#f92672">])</span> right <span style="color:#f92672">=</span> pivot <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">else</span> left <span style="color:#f92672">=</span> pivot <span style="color:#f92672">+</span> 1<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div></article>
  
       
 
@@ -563,6 +571,10 @@ Let&rsquo;s get started!
       </footer>
 
       
+  
+  <div class="book-comments">
+
+</div>
   
  
 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>µicrolean</title>
+    <link>https://ashutosh049.github.io/leetcode/bit-manipulation/</link>
+    <description>Recent content on µicrolean</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://ashutosh049.github.io/leetcode/bit-manipulation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>191. Number of 1 Bits</title>
+      <link>https://ashutosh049.github.io/leetcode/bit-manipulation/number-of-1-bits/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ashutosh049.github.io/leetcode/bit-manipulation/number-of-1-bits/</guid>
+      <description>191. Number of 1 Bits# Problem#Write a function that takes an unsigned integer and returns the number of &amp;lsquo;1&amp;rsquo; bits it has (also known as the Hamming weight).
+Note:
+ Note that in some languages, such as Java, there is no unsigned integer type. In this case, the input will be given as a signed integer type. It should not affect your implementation, as the integer&amp;rsquo;s internal binary representation is the same, whether it is signed or unsigned.</description>
+    </item>
+    
+  </channel>
+</rss>

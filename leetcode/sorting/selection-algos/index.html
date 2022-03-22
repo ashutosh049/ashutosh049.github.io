@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
 <head>
-	<meta name="generator" content="Hugo 0.93.2" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="
-Hello visitor, Welcome to µicrolean!
-I’m Ashutosh. This is a place for me to write gome geek stuff and record my learning.
-You might wanna try searching for your topic in the search box ;)
-Hope you guys find something interesting here! Let&rsquo;s get started!">
+<meta name="description" content="Selection Algorithms#  https://en.wikipedia.org/wiki/Selection_algorithm
+  Quick Select#In computer science, quickselect is a selection algorithm to find the kth smallest element in an unordered list. It is related to the quicksort sorting algorithm. Like quicksort, it was developed by Tony Hoare, and thus is also known as Hoare&rsquo;s selection algorithm.[1] Like quicksort, it is efficient in practice and has good average-case performance, but has poor worst-case performance.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://ashutosh049.github.io/" />
+<meta property="og:url" content="https://ashutosh049.github.io/leetcode/sorting/selection-algos/" />
 
-<title> | µicrolean</title>
+<title>Selection Algos | µicrolean</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.3135b6006d22219d327f0f98c65dd66cfd4263014ae6c47d245e669334f1264c.css" integrity="sha256-MTW2AG0iIZ0yfw&#43;Yxl3WbP1CYwFK5sR9JF5mkzTxJkw=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
   <script defer src="/en.search.min.9c2aff8f386a439f55f0d4bc2ef1ec980b61c242ab331a15f9d160b3384de79b.js" integrity="sha256-nCr/jzhqQ59V8NS8LvHsmAthwkKrMxoV&#43;dFgszhN55s=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="https://ashutosh049.github.io/index.xml" title="µicrolean" />
+<link rel="alternate" type="application/rss+xml" href="https://ashutosh049.github.io/leetcode/sorting/selection-algos/index.xml" title="µicrolean" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -75,7 +71,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-99570b6469c6a1058afdaafdd384bb2f" class="toggle"  />
+    <input type="checkbox" id="section-99570b6469c6a1058afdaafdd384bb2f" class="toggle" checked />
     <label for="section-99570b6469c6a1058afdaafdd384bb2f" class="flex justify-between">
       <a href="/leetcode/" class="">Leetcode</a>
     </label>
@@ -342,7 +338,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-474ec6849ce1e4aac3c3bcca7d1b7e62" class="toggle"  />
+    <input type="checkbox" id="section-474ec6849ce1e4aac3c3bcca7d1b7e62" class="toggle" checked />
     <label for="section-474ec6849ce1e4aac3c3bcca7d1b7e62" class="flex justify-between">
       <a role="button" class="">Sorting</a>
     </label>
@@ -358,9 +354,9 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-12bf54ab1974e1ec2ae8ede403ac3841" class="toggle"  />
+    <input type="checkbox" id="section-12bf54ab1974e1ec2ae8ede403ac3841" class="toggle" checked />
     <label for="section-12bf54ab1974e1ec2ae8ede403ac3841" class="flex justify-between">
-      <a href="/leetcode/sorting/selection-algos/" class="">Selection Algos</a>
+      <a href="/leetcode/sorting/selection-algos/" class="active">Selection Algos</a>
     </label>
   
 
@@ -477,50 +473,71 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong></strong>
+  <strong>Selection Algos</strong>
 
   <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
  
       </header>
 
       
       
-  <article class="markdown"><br>
-<br>
-<div class="book-columns flex flex-wrap">
+  <article class="markdown"><h1 id="selection-algorithms">
+  Selection Algorithms
+  <a class="anchor" href="#selection-algorithms">#</a>
+</h1>
+<blockquote class="book-hint info">
+  <p><span class="fontawesome-inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill='currentColor' d="M640 51.2l-.3 12.2c-28.1.8-45 15.8-55.8 40.3-25 57.8-103.3 240-155.3 358.6H415l-81.9-193.1c-32.5 63.6-68.3 130-99.2 193.1-.3.3-15 0-15-.3C172 352.3 122.8 243.4 75.8 133.4 64.4 106.7 26.4 63.4.2 63.7c0-3.1-.3-10-.3-14.2h161.9v13.9c-19.2 1.1-52.8 13.3-43.3 34.2 21.9 49.7 103.6 240.3 125.6 288.6 15-29.7 57.8-109.2 75.3-142.8-13.9-28.3-58.6-133.9-72.8-160-9.7-17.8-36.1-19.4-55.8-19.7V49.8l142.5.3v13.1c-19.4.6-38.1 7.8-29.4 26.1 18.9 40 30.6 68.1 48.1 104.7 5.6-10.8 34.7-69.4 48.1-100.8 8.9-20.6-3.9-28.6-38.6-29.4.3-3.6 0-10.3.3-13.6 44.4-.3 111.1-.3 123.1-.6v13.6c-22.5.8-45.8 12.8-58.1 31.7l-59.2 122.8c6.4 16.1 63.3 142.8 69.2 156.7L559.2 91.8c-8.6-23.1-36.4-28.1-47.2-28.3V49.6l127.8 1.1.2.5z"/></svg>
+</span>
 
-  <div class="flex-even markdown-inner">
-    <p><code>Hello visitor, Welcome to µicrolean!</code></p>
-<p><code>I’m Ashutosh. This is a place for me to write gome geek stuff and record my learning.</code></p>
-<p><code>You might wanna try searching for your topic in the search box ;)</code></p>
-<br>
-<p><code>Hope you guys find something interesting here!</code>
-<br></p>
-<a  href="/leetcode/"   class="book-btn  book-hint info hint-color-info text-color-info">
-Let&rsquo;s get started!
-</a>
+  <a href="https://en.wikipedia.org/wiki/Selection_algorithm">https://en.wikipedia.org/wiki/Selection_algorithm</a></p>
 
-  </div>
+</blockquote>
 
-  <div class="flex-even markdown-inner">
-    <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<p>
-  <img src="/images/banners/Programmer-boy.svg" alt="" />
-  </div>
+<hr>
+<p><span class="fontawesome-inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill='currentColor' d="M640 51.2l-.3 12.2c-28.1.8-45 15.8-55.8 40.3-25 57.8-103.3 240-155.3 358.6H415l-81.9-193.1c-32.5 63.6-68.3 130-99.2 193.1-.3.3-15 0-15-.3C172 352.3 122.8 243.4 75.8 133.4 64.4 106.7 26.4 63.4.2 63.7c0-3.1-.3-10-.3-14.2h161.9v13.9c-19.2 1.1-52.8 13.3-43.3 34.2 21.9 49.7 103.6 240.3 125.6 288.6 15-29.7 57.8-109.2 75.3-142.8-13.9-28.3-58.6-133.9-72.8-160-9.7-17.8-36.1-19.4-55.8-19.7V49.8l142.5.3v13.1c-19.4.6-38.1 7.8-29.4 26.1 18.9 40 30.6 68.1 48.1 104.7 5.6-10.8 34.7-69.4 48.1-100.8 8.9-20.6-3.9-28.6-38.6-29.4.3-3.6 0-10.3.3-13.6 44.4-.3 111.1-.3 123.1-.6v13.6c-22.5.8-45.8 12.8-58.1 31.7l-59.2 122.8c6.4 16.1 63.3 142.8 69.2 156.7L559.2 91.8c-8.6-23.1-36.4-28.1-47.2-28.3V49.6l127.8 1.1.2.5z"/></svg>
+</span>
+<blockquote class="book-hint info">
+  <h2 id="quick-select">
+  Quick Select
+  <a class="anchor" href="#quick-select">#</a>
+</h2>
+<p>In computer science, 
+  <a href="https://en.wikipedia.org/wiki/Quickselect">quickselect</a> is a 
+  <a href="https://en.wikipedia.org/wiki/Selection_algorithm">selection algorithm</a> to find the kth smallest element in an
+unordered list. It is related to the quicksort sorting algorithm. Like quicksort, it was developed
+by Tony Hoare, and thus is also known as Hoare&rsquo;s selection algorithm.[1] Like quicksort, it is
+efficient in practice and has good average-case performance, but has poor worst-case performance.
+Quickselect and its variants are the selection algorithms most often used in efficient real-world
+implementations.</p>
+<p>Quickselect uses the same overall approach as quicksort, choosing one element as a pivot and
+partitioning the data in two based on the pivot, accordingly as less than or greater than the pivot.
+However, instead of recursing into both sides, as in quicksort, quickselect only recurses into one
+side – the side with the element it is searching for. This reduces the average complexity from
+{\displaystyle \Theta (n\log n)}\Theta (n\log n) to {\displaystyle \Theta (n)}\Theta (n), with a
+worst case of {\displaystyle O(n^{2})}O(n^{2}).</p>
+<p>As with quicksort, quickselect is generally implemented as an in-place algorithm, and beyond
+selecting the kth element, it also partially sorts the data. See selection algorithm for further
+discussion of the connection with sorting.</p>
 
-</div>
-
+</blockquote>
+</p>
 </article>
  
       
@@ -569,6 +586,17 @@ Let&rsquo;s get started!
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
     
   </main>
 
