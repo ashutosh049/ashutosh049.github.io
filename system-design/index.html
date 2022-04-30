@@ -3,22 +3,23 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Analysis Of Algorithm#There are many ways to analyze recurrence relations like
- Master Theorem Substitution Method Recurrence tree method  Master Theorem#Master Theorem presents a framework and formula using which solutions to many recurrence relations can be obtained very easily.
-Almost all recurrences of type \(T(n) = aT(n/b) &#43; f(n)\)can be solved easily by doing a simple check and identifying one of the three cases provided by the theorem.">
+<meta name="description" content="This section contains some of the blogs/article/posts from all over the internet. I do not hold copyright for those write-ups/articles/images/resources/posts. I just have piled them up for my reference purpose and personal favourite collections
+I have tried my best to properly credit the original authors and writer in each page.
+Hope you would find the collection useful!
+Thanks ">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Analysis Of Algorithm" />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="System Design (HLD &amp; LLD)" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://ashutosh049.github.io/leetcode/master-theorem/" />
+<meta property="og:url" content="https://ashutosh049.github.io/system-design/" />
 
-<title>Analysis Of Algorithm | µicrolean</title>
+<title>System Design (HLD &amp; LLD) | µicrolean</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.3135b6006d22219d327f0f98c65dd66cfd4263014ae6c47d245e669334f1264c.css" integrity="sha256-MTW2AG0iIZ0yfw&#43;Yxl3WbP1CYwFK5sR9JF5mkzTxJkw=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
   <script defer src="/en.search.min.9f8f82adabf2767b6b4c00262311bcf26ed7299c1cb48445258fbdbdc615a480.js" integrity="sha256-n4&#43;CravydntrTAAmIxG88m7XKZwctIRFJY&#43;9vcYVpIA=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="https://ashutosh049.github.io/leetcode/master-theorem/index.xml" title="µicrolean" />
+<link rel="alternate" type="application/rss+xml" href="https://ashutosh049.github.io/system-design/index.xml" title="µicrolean" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -72,7 +73,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-99570b6469c6a1058afdaafdd384bb2f" class="toggle" checked />
+    <input type="checkbox" id="section-99570b6469c6a1058afdaafdd384bb2f" class="toggle"  />
     <label for="section-99570b6469c6a1058afdaafdd384bb2f" class="flex justify-between">
       <a href="/leetcode/" class="">Leetcode</a>
     </label>
@@ -464,7 +465,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/leetcode/master-theorem/" class=" active">Analysis Of Algorithm</a>
+    <a href="/leetcode/master-theorem/" class="">Analysis Of Algorithm</a>
   
 
           
@@ -526,9 +527,9 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-9a0000538625343f7664359aeee4eb7d" class="toggle"  />
+    <input type="checkbox" id="section-9a0000538625343f7664359aeee4eb7d" class="toggle" checked />
     <label for="section-9a0000538625343f7664359aeee4eb7d" class="flex justify-between">
-      <a href="/system-design/" class="">System Design (HLD &amp; LLD)</a>
+      <a href="/system-design/" class="active">System Design (HLD &amp; LLD)</a>
     </label>
   
 
@@ -612,119 +613,33 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Analysis Of Algorithm</strong>
+  <strong>System Design (HLD &amp; LLD)</strong>
 
   <label for="toc-control">
-    
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
-    
-  
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#master-theorem">Master Theorem</a></li>
-  </ul>
-</nav>
-
-
-
-  </aside>
-  
  
       </header>
 
       
       
-  <article class="markdown"><h1 id="analysis-of-algorithm">
-  Analysis Of Algorithm
-  <a class="anchor" href="#analysis-of-algorithm">#</a>
-</h1>
-<p>There are many ways to analyze recurrence relations like</p>
-<ul>
-<li>Master Theorem</li>
-<li>Substitution Method</li>
-<li>Recurrence tree method</li>
-</ul>
-<h2 id="master-theorem">
-  Master Theorem
-  <a class="anchor" href="#master-theorem">#</a>
-</h2>
-<p>Master Theorem presents a framework and formula using which solutions to many recurrence
-relations can be obtained very easily.</p>
-<p>Almost all recurrences of type 
-<link rel="stylesheet" href="/katex/katex.min.css" />
-<script defer src="/katex/katex.min.js"></script>
-<script defer src="/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
-  \(T(n) = aT(n/b) &#43; f(n)\)
-</span>
- can
-be solved easily by doing a simple check and identifying one of the three cases provided by the theorem.</p>
-<p>By comparing <span>
-  \( n ^{\log_b a}  \)
-</span>
- (the number of leaves) with <span>
-  \(f(n)\)
-</span>
-, one can decide upon
-the time complexity of the algorithm.</p>
-<p>The 
-  <a href="https://en.wikipedia.org/wiki/Master_theorem_%28analysis_of_algorithms%29">master theorem</a> provides
-a solution to 
-  <a href="https://en.wikipedia.org/wiki/Recursive_algorithm">recurrence function</a> of the form</p>
-<p>Let <span>
-  \(T(n)\)
-</span>
- be a monotonically increasing function that satisfies:
-<br>
-<br>
-<span>
-  \(T(n) = a T(n/b) &#43; f(n)\)
-</span>
+  <article class="markdown"><div class="book-columns flex flex-wrap">
 
+  <div class="flex-even markdown-inner">
+    <p><code>This section contains some of the blogs/article/posts from all over the internet. I do not hold copyright for those write-ups/articles/images/resources/posts. I just have piled them up for my reference purpose and personal favourite collections</code></p>
+<p><code>I have tried my best to properly credit the original authors and writer in each page.</code></p>
+<p><code>Hope you would find the collection useful!</code></p>
 <br>
-<span>
-  \(T(1) = c\)
-</span>
+<p><code>Thanks</code>
+<br></p>
 
-<br>
-<br>
-where <span>
-  \(a \ge 1, b \ge 2, c&gt;0\)
-</span>
-.
-<br>
-<br>
-If <span>
-  \(f(n)\)
-</span>
- is <span>
-  \(\Theta(n^d)\)
-</span>
- where <span>
-  \(d \ge 0\)
-</span>
+  </div>
 
-<br>
-then
-<br>
-<br>
-<span>
-  \(
-x = \begin{cases}
-a &amp;\text{if } b \\
-c &amp;\text{if } d
-\end{cases}\)
-</span>
-</p>
-<blockquote class="book-hint info">
-  Continued&hellip;.
-</blockquote>
+</div>
 
 </article>
  
@@ -771,21 +686,6 @@ c &amp;\text{if } d
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
-    
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
-  
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#master-theorem">Master Theorem</a></li>
-  </ul>
-</nav>
-
-
- 
-      </div>
-    </aside>
     
   </main>
 

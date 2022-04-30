@@ -27,7 +27,7 @@ Explanation: The answer is &amp;quot;abc&amp;quot;, with the length of 3.
 Example 2:#Input: s = &amp;quot;bbbbb&amp;quot;
 Output: 1
 Explanation: The answer is &amp;quot;b&amp;quot;, with the length of 1.
-ConstraintsFollow upApproach and Intuition#Brute force#We can determine all possible substring out of given string s and check for valid sub-string(string without repeating characters), and among such such valid sub-strings, we can formulate te largest string.</description>
+ConstraintsFollow upBrute force#We can determine all possible substring out of given string s and check for valid sub-string(string without repeating characters), and among such such valid sub-strings, we can formulate te largest string.</description>
     </item>
     
   </channel>

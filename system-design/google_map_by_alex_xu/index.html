@@ -3,27 +3,22 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="144. Binary Tree Preorder Traversal# Problem#Given the root of a binary tree, return the preorder traversal of its nodes&rsquo; values.
-Example#Example 1:#Input: root = [1,null,2,3]
-Output: [1,2,3]
-Constraints# The number of nodes in the tree is in the range [0, 100]. 100 &lt;= Node.val &lt;= 100  Follow up#Recursive solution is trivial, could you do it iteratively?">
+<meta name="description" content="A post by Alex Xu on Google Map#Read the full article here
+Google started project G𝐨𝐨𝐠𝐥𝐞 M𝐚𝐩𝐬 in 2005. As of March 2021, Google Maps had one billion daily active users, 99% coverage of the world.
+Although Google Maps is a very complex system, we can break it down into 3 high-level components. In this post, let’s take a look at how to design a simplified Google Maps.">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="144. Binary Tree Preorder Traversal" />
-<meta property="og:description" content="144. Binary Tree Preorder Traversal# Problem#Given the root of a binary tree, return the preorder traversal of its nodes&rsquo; values.
-Example#Example 1:#Input: root = [1,null,2,3]
-Output: [1,2,3]
-Constraints# The number of nodes in the tree is in the range [0, 100]. 100 &lt;= Node.val &lt;= 100  Follow up#Recursive solution is trivial, could you do it iteratively?" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://ashutosh049.github.io/leetcode/binary-tree/144-binary-tree-preorder-traversal/" /><meta property="article:section" content="leetcode" />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="A post by Alex Xu on Google Map" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ashutosh049.github.io/system-design/google_map_by_alex_xu/" />
 
-
-
-<title>144. Binary Tree Preorder Traversal | µicrolean</title>
+<title>A post by Alex Xu on Google Map | µicrolean</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.3135b6006d22219d327f0f98c65dd66cfd4263014ae6c47d245e669334f1264c.css" integrity="sha256-MTW2AG0iIZ0yfw&#43;Yxl3WbP1CYwFK5sR9JF5mkzTxJkw=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
   <script defer src="/en.search.min.9f8f82adabf2767b6b4c00262311bcf26ed7299c1cb48445258fbdbdc615a480.js" integrity="sha256-n4&#43;CravydntrTAAmIxG88m7XKZwctIRFJY&#43;9vcYVpIA=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://ashutosh049.github.io/system-design/google_map_by_alex_xu/index.xml" title="µicrolean" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -77,7 +72,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-99570b6469c6a1058afdaafdd384bb2f" class="toggle" checked />
+    <input type="checkbox" id="section-99570b6469c6a1058afdaafdd384bb2f" class="toggle"  />
     <label for="section-99570b6469c6a1058afdaafdd384bb2f" class="flex justify-between">
       <a href="/leetcode/" class="">Leetcode</a>
     </label>
@@ -161,7 +156,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3e7fa6efd6e9562dc187ac291a8808c5" class="toggle" checked />
+    <input type="checkbox" id="section-3e7fa6efd6e9562dc187ac291a8808c5" class="toggle"  />
     <label for="section-3e7fa6efd6e9562dc187ac291a8808c5" class="flex justify-between">
       <a role="button" class="">Binary Tree</a>
     </label>
@@ -203,7 +198,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/leetcode/binary-tree/144-binary-tree-preorder-traversal/" class=" active">144. Binary Tree Preorder Traversal</a>
+    <a href="/leetcode/binary-tree/144-binary-tree-preorder-traversal/" class="">144. Binary Tree Preorder Traversal</a>
   
 
         </li>
@@ -531,7 +526,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-9a0000538625343f7664359aeee4eb7d" class="toggle"  />
+    <input type="checkbox" id="section-9a0000538625343f7664359aeee4eb7d" class="toggle" checked />
     <label for="section-9a0000538625343f7664359aeee4eb7d" class="flex justify-between">
       <a href="/system-design/" class="">System Design (HLD &amp; LLD)</a>
     </label>
@@ -547,7 +542,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/system-design/google_map_by_alex_xu/" class="">A post by Alex Xu on Google Map</a>
+    <a href="/system-design/google_map_by_alex_xu/" class=" active">A post by Alex Xu on Google Map</a>
   
 
           
@@ -617,7 +612,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>144. Binary Tree Preorder Traversal</strong>
+  <strong>A post by Alex Xu on Google Map</strong>
 
   <label for="toc-control">
     
@@ -633,17 +628,13 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#problem">Problem</a>
+    <li>
       <ul>
-        <li><a href="#example">Example</a></li>
-        <li><a href="#constraints">Constraints</a></li>
-        <li><a href="#follow-up">Follow up</a></li>
-      </ul>
-    </li>
-    <li><a href="#approach-and-intuition">Approach and Intuition</a>
-      <ul>
-        <li><a href="#recursive-approach">Recursive approach</a></li>
-        <li><a href="#iterative">Iterative</a></li>
+        <li><a href="#location-service">Location Service</a></li>
+        <li><a href="#map-rendering">Map Rendering</a></li>
+        <li><a href="#navigation-service">Navigation Service</a></li>
+        <li><a href="#more-articles-and-references">More articles and references</a></li>
+        <li><a href="#questions-and-follow-ups">Questions and follow-ups</a></li>
       </ul>
     </li>
   </ul>
@@ -658,206 +649,106 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="144-binary-tree-preorder-traversalhttpsleetcodecomproblemsbinary-tree-preorder-traversal">
-  
-  <a href="https://leetcode.com/problems/binary-tree-preorder-traversal">144. Binary Tree Preorder Traversal</a>
-  <a class="anchor" href="#144-binary-tree-preorder-traversalhttpsleetcodecomproblemsbinary-tree-preorder-traversal">#</a>
+  <article class="markdown"><h1 id="a-post-by-alex-xu-on-google-map">
+  A post by Alex Xu on Google Map
+  <a class="anchor" href="#a-post-by-alex-xu-on-google-map">#</a>
 </h1>
-<p>
-  <img src="/images/leetcode_lvl_badges/easy.svg" alt="Leetcode Easy" /></p>
-<hr>
-<h2 id="problem">
-  Problem
-  <a class="anchor" href="#problem">#</a>
-</h2>
-<p>Given the root of a binary tree, return the preorder traversal of its nodes&rsquo; values.</p>
-<h3 id="example">
-  Example
-  <a class="anchor" href="#example">#</a>
+<br>
+<br>
+<p>Read the full article 
+  <a href="https://www.linkedin.com/posts/alex-xu-a8131b11_systemdesign-coding-interviewtips-activity-6889974038777724928-G3u2">here</a></p>
+<p>Google started project G𝐨𝐨𝐠𝐥𝐞 M𝐚𝐩𝐬 in 2005. As of March 2021, Google Maps had one billion daily active users, 99% coverage of the world.</p>
+<p>Although Google Maps is a very complex system, we can break it down into 3 high-level components. In this post, let’s take a look at how to design a simplified Google Maps.</p>
+<h3 id="location-service">
+  Location Service
+  <a class="anchor" href="#location-service">#</a>
 </h3>
-<h4 id="example-1">
-  Example 1:
-  <a class="anchor" href="#example-1">#</a>
-</h4>
+<p>The location service is responsible for recording a user’s location update. The Google Map clients send location updates every few seconds. The user location data is used in many cases:</p>
+<ul>
+<li>detect new and recently closed roads.</li>
+<li>improve the accuracy of the map over time.</li>
+<li>used as an input for live traffic data.</li>
+</ul>
+<h3 id="map-rendering">
+  Map Rendering
+  <a class="anchor" href="#map-rendering">#</a>
+</h3>
+<p>The world’s map is projected into a huge 2D map image. It is broken down into small image blocks called “tiles” (see below). The tiles are static. They don’t change very often. An efficient way to serve static tile files is with a CDN backed by cloud storage like S3. The users can load the necessary tiles to compose a map from nearby CDN.</p>
+<p>What if a user is zooming and panning the map viewpoint on the client to explore their surroundings?</p>
+<p>An efficient way is to pre-calculate the map blocks with different zoom levels and load the images when needed.</p>
+<h3 id="navigation-service">
+  Navigation Service
+  <a class="anchor" href="#navigation-service">#</a>
+</h3>
+<p>This component is responsible for finding a reasonably fast route from point A to point B. It calls two services to help with the path calculation:</p>
+<ol>
+<li>
+<p>Geocoding Service: resolve the given address to a latitude/longitude pair.</p>
+</li>
+<li>
+<p>Route Planner Service: this service does three things in sequence:</p>
+<ul>
+<li>Calculate top-K shortest paths between A and B</li>
+<li>Calculate the estimation of time for each path based on current traffic and historical data</li>
+<li>Rank the paths by time predictions and user filtering. For example, the user doesn’t want to avoid tolls.</li>
+</ul>
+</li>
+</ol>
 <p>
-  <img src="https://assets.leetcode.com/uploads/2020/09/15/inorder_1.jpg" alt="inorder_1.jpg" /></p>
-<p>Input: root = [1,null,2,3]</p>
-<p>Output: [1,2,3]</p>
-<h3 id="constraints">
-  Constraints
-  <a class="anchor" href="#constraints">#</a>
+  <img src="https://media-exp1.licdn.com/dms/image/C5622AQEGdukkslxq_A/feedshare-shrink_800/0/1642697819441?e=2147483647&amp;v=beta&amp;t=6VsadWi_6NkAQDEw3aCxDK_xP6R7isdr5uMU6M0vwMc" alt="Goole Map" />
+
+  <a href="https://media-exp1.licdn.com/dms/image/C5622AQEGdukkslxq_A/feedshare-shrink_800/0/1642697819441?e=2147483647&amp;v=beta&amp;t=6VsadWi_6NkAQDEw3aCxDK_xP6R7isdr5uMU6M0vwMc">Image source</a></p>
+<h3 id="more-articles-and-references">
+  More articles and references
+  <a class="anchor" href="#more-articles-and-references">#</a>
 </h3>
 <ul>
-<li>The number of nodes in the tree is in the range [0, 100].</li>
-<li>100 &lt;= Node.val &lt;= 100</li>
+<li>
+  <a href="https://medium.com/google-design/google-maps-cb0326d165f5">Prototyping a Smoother Map</a></li>
+<li>
+  <a href="https://deepmind.com/blog/article/traffic-prediction-with-advanced-graph-neural-networks">Traffic prediction with advanced Graph Neural Networks</a></li>
+<li>
+  <a href="https://blog.routific.com/route-optimization-google-maps-313a45e13d27">Route Optimization And Planning With Google Maps</a></li>
 </ul>
-<h3 id="follow-up">
-  Follow up
-  <a class="anchor" href="#follow-up">#</a>
+<h3 id="questions-and-follow-ups">
+  Questions and follow-ups
+  <a class="anchor" href="#questions-and-follow-ups">#</a>
 </h3>
-<p>Recursive solution is trivial, could you do it iteratively?</p>
-<hr>
-<h2 id="approach-and-intuition">
-  Approach and Intuition
-  <a class="anchor" href="#approach-and-intuition">#</a>
-</h2>
-<h3 id="recursive-approach">
-  Recursive approach
-  <a class="anchor" href="#recursive-approach">#</a>
-</h3>
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-binary-tree-preorder-traversal_recursive" id="tabs-binary-tree-preorder-traversal_recursive-0" checked="checked" />
-  <label for="tabs-binary-tree-preorder-traversal_recursive-0">Java</label>
-  <div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">inorderTraversal</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> res <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
-</span></span><span style="display:flex;"><span>        helper<span style="color:#f92672">(</span>root<span style="color:#f92672">,</span> res<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> res<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">helper</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">,</span> List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> res<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>root <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>            res<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>root<span style="color:#f92672">.</span><span style="color:#a6e22e">val</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>            helper<span style="color:#f92672">(</span>root<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span><span style="color:#f92672">,</span> res<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>            helper<span style="color:#f92672">(</span>root<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span><span style="color:#f92672">,</span> res<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div></div><input type="radio" class="toggle" name="tabs-binary-tree-preorder-traversal_recursive" id="tabs-binary-tree-preorder-traversal_recursive-1"  />
-  <label for="tabs-binary-tree-preorder-traversal_recursive-1">C&#43;&#43;</label>
-  <div class="book-tabs-content markdown-inner"></div><input type="radio" class="toggle" name="tabs-binary-tree-preorder-traversal_recursive" id="tabs-binary-tree-preorder-traversal_recursive-2"  />
-  <label for="tabs-binary-tree-preorder-traversal_recursive-2">Python</label>
-  <div class="book-tabs-content markdown-inner"></div><input type="radio" class="toggle" name="tabs-binary-tree-preorder-traversal_recursive" id="tabs-binary-tree-preorder-traversal_recursive-3"  />
-  <label for="tabs-binary-tree-preorder-traversal_recursive-3">Javascript</label>
-  <div class="book-tabs-content markdown-inner"></div></div>
-
-<h4 id="complexity-analysis">
-  Complexity Analysis
-  <a class="anchor" href="#complexity-analysis">#</a>
-</h4>
-<p><code>Time complexity</code>: 
-<link rel="stylesheet" href="/katex/katex.min.css" />
-<script defer src="/katex/katex.min.js"></script>
-<script defer src="/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
-  \( O(n) \)
-</span>
- as the recurrence relation is <span>
-  \( T(n) = 2T(n/2) &#43; 1 \)
-</span>
-.</p>
-<h6 id="explanation">
-  Explanation
-  <a class="anchor" href="#explanation">#</a>
-</h6>
-<p>Recurrence Relation:</p>
-<p>Let <span>
-  \(T(n)\)
-</span>
- is the number of operations executed in your traversal algorithm(DFS). Function is recursively called 2 times each time for left and right sub-tree.</p>
-<p><span>
-  \(
-T(n) = 2T(n/2) &#43; 1\)
-</span>
-.</p>
-<p>Using the 
-  <a href="https://en.wikipedia.org/wiki/Master_theorem_%28analysis_of_algorithms%29">Masters&rsquo; Theorem</a> , we have 
-<br>
-<span>
-  \(T(n) = a*T(n/b) &#43; f(n)\)
-</span>
-</p>
-<p><br><code>f(n)</code> is some constant.</p>
-<p>For a Graph, the complexity of a Depth First Traversal is <span>
-  \( O(V &#43; E) \)
-</span>
-,
-where <code>V</code> is the number of nodes or vertices, and <code>E</code> is the number of edges.</p>
-<p>A <code>Binary Tree</code> is also a <code>Graph</code>, and we visit <strong>each node only once</strong>.</p>
-<p>The complexity of each of these Depth-first traversals(Pre, In and Post) is <span>
-  \(O(V &#43; E)\)
-</span>
-
-or <span>
-  \(O(N &#43; E)\)
-</span>
-.</p>
-<p>Since the number of edges that can originate from a node is limited to 2 in the case of a <code>Binary Tree</code>,
-the maximum number of edges in a <code>Binary Tree</code> is <span>
-  \(n-1\)
-</span>
-, where <code>n</code> is the total number of nodes.</p>
-<p>The complexity then becomes <span>
-  \(O(n &#43; n-1)\)
-</span>
-, which is <span>
-  \(O(n)\)
-</span>
-.</p>
+<ul>
+<li>
 <blockquote>
-<p>As for recursion, the only difference is that recursive method calls build the stack implicitly by pushing call frames to the JVM stack</p>
+<p>Hi Alex, Thanks for sharing. Can you go a little deeper into how to find <code>K-Shortest path</code>? How would that work? <code>DFS</code>? <code>BFS</code>? Those solutions may be pretty slow given that it could be exponential to the number of intersections there is in a typical metropolitan area. Precompute routes based on given tiles? That may work for most cases, but if there is a road closure, traffic accident, how would that be handled?</p>
 </blockquote>
-<h5 id="master-theorem">
-  Master Theorem
-  <a class="anchor" href="#master-theorem">#</a>
-</h5>
-<p>Let <span>
-  \(T(n)\)
-</span>
- be a monotonically increasing function that satisfies:
-<br>
-<br>
-<span>
-  \(T(n) = a T(n/b) &#43; f(n)\)
-</span>
-
-<br>
-<span>
-  \(T(1) = c\)
-</span>
-
-<br>
-<br>
-where <span>
-  \(a &gt;= 1, b &gt;= 2, c&gt;0\)
-</span>
-.
-<br>
-<br>
-If <span>
-  \(f(n)\)
-</span>
- is <span>
-  \(\Theta(n^d)\)
-</span>
- where <span>
-  \(d &gt;= 0\)
-</span>
-
-<br>
-then
-<br>
-<br>
-<span>
-  \(
-x = \begin{cases}
-a &amp;\text{if } b \\
-c &amp;\text{if } d
-\end{cases}\)
-</span>
-</p>
-<p><code>Space Complexity</code>: <span>
-  \( O(1) \)
-</span>
-</p>
+<ul>
+<li>
+<blockquote>
+<p>Great question. Since the graph of the whole world is huge, we can run the shortest path on super segments instead, and then within each super segment, we can find how to navigate to the next super segment. Here is a good read: 
+  <a href="https://blog.routific.com/route-optimization-google-maps-313a45e13d27">https://blog.routific.com/route-optimization-google-maps-313a45e13d27</a></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<blockquote>
+<p>How would the Navigation server get live traffic data? Does the User Location DB store that data?</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Alex Xu how does the map work offline?</p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p>My guess is that the nearby roads, building structures, etc are cached when we first install the app or click the navigate button. The mobile device can figure out the routes without talking to the server. It couldn&rsquo;t take traffic conditions into consideration though.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
 <hr>
-<h3 id="iterative">
-  Iterative
-  <a class="anchor" href="#iterative">#</a>
-</h3>
-<hr>
+<p>Original Article/Credit : 
+  <a href="https://www.linkedin.com/posts/alex-xu-a8131b11_systemdesign-coding-interviewtips-activity-6889974038777724928-G3u2/">Alex Xu</a></p>
 </article>
  
       
@@ -914,17 +805,13 @@ c &amp;\text{if } d
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#problem">Problem</a>
+    <li>
       <ul>
-        <li><a href="#example">Example</a></li>
-        <li><a href="#constraints">Constraints</a></li>
-        <li><a href="#follow-up">Follow up</a></li>
-      </ul>
-    </li>
-    <li><a href="#approach-and-intuition">Approach and Intuition</a>
-      <ul>
-        <li><a href="#recursive-approach">Recursive approach</a></li>
-        <li><a href="#iterative">Iterative</a></li>
+        <li><a href="#location-service">Location Service</a></li>
+        <li><a href="#map-rendering">Map Rendering</a></li>
+        <li><a href="#navigation-service">Navigation Service</a></li>
+        <li><a href="#more-articles-and-references">More articles and references</a></li>
+        <li><a href="#questions-and-follow-ups">Questions and follow-ups</a></li>
       </ul>
     </li>
   </ul>
