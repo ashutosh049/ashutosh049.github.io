@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>µicrolean</title>
+    <link>https://ashutosh049.github.io/leetcode/arrays-and-string-manipulation/sliding_window/</link>
+    <description>Recent content on µicrolean</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://ashutosh049.github.io/leetcode/arrays-and-string-manipulation/sliding_window/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>159. Longest Substring with At Most Two Distinct Characters</title>
+      <link>https://ashutosh049.github.io/leetcode/arrays-and-string-manipulation/sliding_window/longest-substring-with-at-most-two-distinct-characters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ashutosh049.github.io/leetcode/arrays-and-string-manipulation/sliding_window/longest-substring-with-at-most-two-distinct-characters/</guid>
+      <description>159. Longest Substring with At Most Two Distinct Characters#</description>
+    </item>
+    
+    <item>
+      <title>3. Longest Substring Without Repeating Characters</title>
+      <link>https://ashutosh049.github.io/leetcode/arrays-and-string-manipulation/sliding_window/longest-substring-without-repeating-characters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ashutosh049.github.io/leetcode/arrays-and-string-manipulation/sliding_window/longest-substring-without-repeating-characters/</guid>
+      <description>3. Longest Substring Without Repeating Characters#ProblemGiven a string s, find the length of the longest substring without repeating characters.ExampleExample 1:#Input: s= &amp;quot;abcabcbb&amp;quot;
+Output: 3
+Explanation: The answer is &amp;quot;abc&amp;quot;, with the length of 3.
+Example 2:#Input: s = &amp;quot;bbbbb&amp;quot;
+Output: 1
+Explanation: The answer is &amp;quot;b&amp;quot;, with the length of 1.
+ConstraintsFollow upApproach and Intuition#Brute force#We can determine all possible substring out of given string s and check for valid sub-string(string without repeating characters), and among such such valid sub-strings, we can formulate te largest string.</description>
+    </item>
+    
+  </channel>
+</rss>

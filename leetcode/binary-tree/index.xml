@@ -34,6 +34,18 @@ Input: root = []Output: true&amp;nbsp;</description>
     </item>
     
     <item>
+      <title>144. Binary Tree Preorder Traversal</title>
+      <link>https://ashutosh049.github.io/leetcode/binary-tree/144-binary-tree-preorder-traversal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ashutosh049.github.io/leetcode/binary-tree/144-binary-tree-preorder-traversal/</guid>
+      <description>144. Binary Tree Preorder Traversal# Problem#Given the root of a binary tree, return the preorder traversal of its nodes&amp;rsquo; values.
+Example#Example 1:#Input: root = [1,null,2,3]
+Output: [1,2,3]
+Constraints# The number of nodes in the tree is in the range [0, 100]. 100 &amp;lt;= Node.val &amp;lt;= 100  Follow up#Recursive solution is trivial, could you do it iteratively?</description>
+    </item>
+    
+    <item>
       <title>173. Binary Search Tree Iterator</title>
       <link>https://ashutosh049.github.io/leetcode/binary-tree/binary_search_tree_iterator/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

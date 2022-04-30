@@ -43,6 +43,27 @@ Input: root = []Output: true&amp;nbsp;</description>
     </item>
     
     <item>
+      <title>144. Binary Tree Preorder Traversal</title>
+      <link>https://ashutosh049.github.io/leetcode/binary-tree/144-binary-tree-preorder-traversal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ashutosh049.github.io/leetcode/binary-tree/144-binary-tree-preorder-traversal/</guid>
+      <description>144. Binary Tree Preorder Traversal# Problem#Given the root of a binary tree, return the preorder traversal of its nodes&amp;rsquo; values.
+Example#Example 1:#Input: root = [1,null,2,3]
+Output: [1,2,3]
+Constraints# The number of nodes in the tree is in the range [0, 100]. 100 &amp;lt;= Node.val &amp;lt;= 100  Follow up#Recursive solution is trivial, could you do it iteratively?</description>
+    </item>
+    
+    <item>
+      <title>159. Longest Substring with At Most Two Distinct Characters</title>
+      <link>https://ashutosh049.github.io/leetcode/arrays-and-string-manipulation/sliding_window/longest-substring-with-at-most-two-distinct-characters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ashutosh049.github.io/leetcode/arrays-and-string-manipulation/sliding_window/longest-substring-with-at-most-two-distinct-characters/</guid>
+      <description>159. Longest Substring with At Most Two Distinct Characters#</description>
+    </item>
+    
+    <item>
       <title>173. Binary Search Tree Iterator</title>
       <link>https://ashutosh049.github.io/leetcode/binary-tree/binary_search_tree_iterator/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -87,6 +108,21 @@ Input: root = [1,2,3,null,5]Output: [&#34;1-&amp;gt;2-&amp;gt;5&#34;,&#34;1-&am
 Input: root = [1]Output: [&#34;1&#34;]&amp;nbsp;
 Constraints:
 The number of nodes in the tree is in the range [1, 100].-100 &amp;lt;= Node.val &amp;lt;= 100program#Javaclass Solution {  List&amp;lt;String&amp;gt; res;  public List&amp;lt;String&amp;gt; binaryTreePaths(TreeNode root) {   //return binaryTreePaths_dfs_iterative(root);   this.</description>
+    </item>
+    
+    <item>
+      <title>3. Longest Substring Without Repeating Characters</title>
+      <link>https://ashutosh049.github.io/leetcode/arrays-and-string-manipulation/sliding_window/longest-substring-without-repeating-characters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ashutosh049.github.io/leetcode/arrays-and-string-manipulation/sliding_window/longest-substring-without-repeating-characters/</guid>
+      <description>3. Longest Substring Without Repeating Characters#ProblemGiven a string s, find the length of the longest substring without repeating characters.ExampleExample 1:#Input: s= &amp;quot;abcabcbb&amp;quot;
+Output: 3
+Explanation: The answer is &amp;quot;abc&amp;quot;, with the length of 3.
+Example 2:#Input: s = &amp;quot;bbbbb&amp;quot;
+Output: 1
+Explanation: The answer is &amp;quot;b&amp;quot;, with the length of 1.
+ConstraintsFollow upApproach and Intuition#Brute force#We can determine all possible substring out of given string s and check for valid sub-string(string without repeating characters), and among such such valid sub-strings, we can formulate te largest string.</description>
     </item>
     
     <item>

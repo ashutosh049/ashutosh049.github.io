@@ -1,27 +1,24 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
 <head>
-	<meta name="generator" content="Hugo 0.93.2" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="
-Hello visitor, Welcome to µicrolean!
-I’m Ashutosh. This is a place for me to write some geek stuff and record my learning.
-You might wanna try searching for your topic in the search box ;)
-Hope you guys find something interesting here! Let&rsquo;s get started!">
+<meta name="description" content="Analysis Of Algorithm#There are many ways to analyze recurrence relations like
+ Master Theorem Substitution Method Recurrence tree method  Master Theorem#Master Theorem presents a framework and formula using which solutions to many recurrence relations can be obtained very easily.
+Almost all recurrences of type \(T(n) = aT(n/b) &#43; f(n)\)can be solved easily by doing a simple check and identifying one of the three cases provided by the theorem.">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Analysis Of Algorithm" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://ashutosh049.github.io/" />
+<meta property="og:url" content="https://ashutosh049.github.io/leetcode/master-theorem/" />
 
-<title> | µicrolean</title>
+<title>Analysis Of Algorithm | µicrolean</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.3135b6006d22219d327f0f98c65dd66cfd4263014ae6c47d245e669334f1264c.css" integrity="sha256-MTW2AG0iIZ0yfw&#43;Yxl3WbP1CYwFK5sR9JF5mkzTxJkw=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
   <script defer src="/en.search.min.700b45c2e4f03e43f24bc5e6b66a04fe8da44b4e4e5817ed03e101847f1c455b.js" integrity="sha256-cAtFwuTwPkPyS8XmtmoE/o2kS05OWBftA&#43;EBhH8cRVs=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="https://ashutosh049.github.io/index.xml" title="µicrolean" />
+<link rel="alternate" type="application/rss+xml" href="https://ashutosh049.github.io/leetcode/master-theorem/index.xml" title="µicrolean" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -75,7 +72,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-99570b6469c6a1058afdaafdd384bb2f" class="toggle"  />
+    <input type="checkbox" id="section-99570b6469c6a1058afdaafdd384bb2f" class="toggle" checked />
     <label for="section-99570b6469c6a1058afdaafdd384bb2f" class="flex justify-between">
       <a href="/leetcode/" class="">Leetcode</a>
     </label>
@@ -467,7 +464,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/leetcode/master-theorem/" class="">Analysis Of Algorithm</a>
+    <a href="/leetcode/master-theorem/" class=" active">Analysis Of Algorithm</a>
   
 
           
@@ -576,49 +573,119 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong></strong>
+  <strong>Analysis Of Algorithm</strong>
 
   <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#master-theorem">Master Theorem</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
  
       </header>
 
       
       
-  <article class="markdown"><br>
+  <article class="markdown"><h1 id="analysis-of-algorithm">
+  Analysis Of Algorithm
+  <a class="anchor" href="#analysis-of-algorithm">#</a>
+</h1>
+<p>There are many ways to analyze recurrence relations like</p>
+<ul>
+<li>Master Theorem</li>
+<li>Substitution Method</li>
+<li>Recurrence tree method</li>
+</ul>
+<h2 id="master-theorem">
+  Master Theorem
+  <a class="anchor" href="#master-theorem">#</a>
+</h2>
+<p>Master Theorem presents a framework and formula using which solutions to many recurrence
+relations can be obtained very easily.</p>
+<p>Almost all recurrences of type 
+<link rel="stylesheet" href="/katex/katex.min.css" />
+<script defer src="/katex/katex.min.js"></script>
+<script defer src="/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
+  \(T(n) = aT(n/b) &#43; f(n)\)
+</span>
+ can
+be solved easily by doing a simple check and identifying one of the three cases provided by the theorem.</p>
+<p>By comparing <span>
+  \( n ^{\log_b a}  \)
+</span>
+ (the number of leaves) with <span>
+  \(f(n)\)
+</span>
+, one can decide upon
+the time complexity of the algorithm.</p>
+<p>The 
+  <a href="https://en.wikipedia.org/wiki/Master_theorem_%28analysis_of_algorithms%29">master theorem</a> provides
+a solution to 
+  <a href="https://en.wikipedia.org/wiki/Recursive_algorithm">recurrence function</a> of the form</p>
+<p>Let <span>
+  \(T(n)\)
+</span>
+ be a monotonically increasing function that satisfies:
 <br>
-<div class="book-columns flex flex-wrap">
+<br>
+<span>
+  \(T(n) = a T(n/b) &#43; f(n)\)
+</span>
 
-  <div class="flex-even markdown-inner">
-    <p><code>Hello visitor, Welcome to µicrolean!</code></p>
-<p><code>I’m Ashutosh. This is a place for me to write some geek stuff and record my learning.</code></p>
-<p><code>You might wanna try searching for your topic in the search box ;)</code></p>
 <br>
-<p><code>Hope you guys find something interesting here!</code>
-<br></p>
-<a  href="/leetcode/"   class="book-btn  book-hint info hint-color-info text-color-info">
-Let&rsquo;s get started!
-</a>
+<span>
+  \(T(1) = c\)
+</span>
 
-  </div>
+<br>
+<br>
+where <span>
+  \(a \ge 1, b \ge 2, c&gt;0\)
+</span>
+.
+<br>
+<br>
+If <span>
+  \(f(n)\)
+</span>
+ is <span>
+  \(\Theta(n^d)\)
+</span>
+ where <span>
+  \(d \ge 0\)
+</span>
 
-  <div class="flex-even markdown-inner">
-    <br>
+<br>
+then
 <br>
 <br>
-<br>
-<br>
-<br>
-<p>
-  <img src="/images/banners/Programmer-boy.svg" alt="" />
-  </div>
-
-</div>
+<span>
+  \(
+x = \begin{cases}
+a &amp;\text{if } b \\
+c &amp;\text{if } d
+\end{cases}\)
+</span>
+</p>
+<blockquote class="book-hint info">
+  Continued&hellip;.
+</blockquote>
 
 </article>
  
@@ -668,6 +735,21 @@ Let&rsquo;s get started!
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#master-theorem">Master Theorem</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
     
   </main>
 
